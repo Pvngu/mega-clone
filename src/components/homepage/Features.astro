@@ -35,17 +35,17 @@ const items = [
 ]
 ---
 
-<SectionContent className='px-11 mb-14'>
+<SectionContent className='px-6 xl:px-11 mb-14'>
     <H2 className='text-center'>Why choose MEGA?</H2>
     <div class="flex flex-col gap-y-20">
         {
             items.map((item, i) => (
-                <div class=`flex ${i % 2 !== 0 ? 'flex-row-reverse' : ''} items-center`>
+                <div class=`flex ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''} items-center max-md:flex-col`>
                     <div class="flex-grow">
                         <video muted loop playsinline autoplay src={item.video}></video>
                     </div>
-                    <div class="flex flex-col gap-y-7 w-[36%]">
-                        <H3 className='max-w-[80%]'>{item.name}</H3>
+                    <div class="flex flex-col gap-y-7 md:w-[36%]">
+                        <H3 className='lg:max-w-[80%]'>{item.name}</H3>
                         <P>{item.p}</P>
                         {
                             item.linkTxt && (
