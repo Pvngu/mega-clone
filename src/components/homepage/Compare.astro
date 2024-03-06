@@ -27,20 +27,20 @@ const items = [
 ]
 ---
 
-<SectionContent className='px-11 py-20'>
+<SectionContent className='px-6 xl:px-11 py-20'>
     <H3 className='text-center mb-12'>How does MEGA compare?</H3>
-    <div class="flex gap-x-7">
+    <div class="flex max-md:flex-col gap-7">
         {
             items.map(item => (
-                <div class="flex flex-col gap-y-10 border-[1px] border-gray-150 w-full p-8">
+                <div class="flex flex-col gap-y-6 xl:gap-y-10 border-[1px] border-gray-150 w-full p-6 md:p-8">
                     <div class="flex flex-col gap-y-5">
-                        <div class="size-16">
+                        <div class="size-12 md:size-16">
                             <img class="size-full" src={item.img} alt=`${item.name} logo`>
                         </div>
                         <h3 class="text-main font-poppins text-2xl font-semibold">{item.name}</h3>
                     </div>
                     <div class="flex flex-col gap-y-2">
-                        <div class="text-main font-poppins font-semibold text-5xl">€{item.price}*</div>
+                        <div class="text-main font-poppins font-semibold text-3xl md:text-5xl">€{item.price}*</div>
                         <div class="text-gray-secondary">per TB per month</div>
                     </div>
                     <div>
