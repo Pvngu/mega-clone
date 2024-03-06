@@ -1,0 +1,26 @@
+---
+import SectionContent from '../SectionContent.astro';
+import H3 from '../H3.astro';
+import P from '../P.astro';
+import ButtonPrimary from '../ButtonPrimary.astro';
+---
+
+<SectionContent className='px-11 py-20'>
+    <div class="flex items-center bg-[#052266] gap-x-12 py-20 px-10">
+        <div class="w-[40%]">
+            <div class="font-inter font-bold text-main opacity-60 text-xl">NEW</div>
+            <H3 className='mb-5'>MEGA VPN – Protect your privacy online</H3>
+            <P className="mb-5">Secure your Android device with a fast, encrypted internet connection that keeps you safe online.
+                <br><br>Available exclusively to MEGA Pro plan subscribers.
+            </P>
+            <a href="/vpn">
+                <button class="px-[1.4rem] py-[0.6rem] font-semibold bg-[#04101e] font-inter rounded-lg text-main border-2 border-[#04101e]">More about MEGA VPN</button>
+            </a>
+        </div>
+        <div class="w-[60%]">
+            <div>
+                <img class="object-contain" src="https://mega.io/wp-content/uploads/vpn-featured-promo_2840x2148.png" alt="">
+            </div>
+        </div>
+    </div>
+</SectionContent>
