@@ -1,0 +1,59 @@
+---
+import SectionContent from '../SectionContent.astro';
+import H3 from '../H3.astro';
+
+const items = [
+    {
+        name: 'MEGA',
+        price: '1.56',
+        encryption: true,
+        plan: 'Pro III annual payment',
+        img: 'https://mega.io/wp-content/themes/megapages/megalib/images/megaicon.svg'
+    },
+    {
+        name: 'Dropbox',
+        price: '1.56',
+        encryption: false,
+        plan: ' the Professional annual plan',
+        img: 'https://mega.io/wp-content/themes/megapages/megalib/images/dropbox-icon.svg'
+    },
+    {
+        name: 'Google Drive',
+        price: '3.70',
+        encryption: false,
+        plan: '30 TB annual payment',
+        img: 'https://mega.io/wp-content/themes/megapages/megalib/images/googledrive-icon.svg'
+    },
+]
+---
+
+<SectionContent className='px-11 py-20'>
+    <H3 className='text-center mb-12'>How does MEGA compare?</H3>
+    <div class="flex gap-x-7">
+        {
+            items.map(item => (
+                <div class="flex flex-col gap-y-10 border-[1px] border-gray-150 w-full p-8">
+                    <div class="flex flex-col gap-y-5">
+                        <div class="size-16">
+                            <img class="size-full" src={item.img} alt=`${item.name} logo`>
+                        </div>
+                        <h3 class="text-main font-poppins text-2xl font-semibold">{item.name}</h3>
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <div class="text-main font-poppins font-semibold text-5xl">€{item.price}*</div>
+                        <div class="text-gray-secondary">per TB per month</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-x-1 text-main">
+                            <i class=`bx bx-${item.encryption ? 'check' : 'x'} text-3xl`></i>
+                            <div class="font-inter font-semibold">End-to-end encryption</div>
+                        </div>
+                    </div>
+                    <div class="text-gray-secondary font-inter text-sm">
+                        <div>* Price based on {item.plan}</div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</SectionContent>
