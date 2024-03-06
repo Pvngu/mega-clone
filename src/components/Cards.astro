@@ -1,0 +1,45 @@
+---
+import SectionContent from '../components/SectionContent.astro';
+import H2 from '../components/H2.astro';
+
+const cards = [
+    {
+        name: 'Cloud storage',
+        p: 'Store data securely online. Get lots of storage space, easily extend your storage, and upload big files and folders.',
+        img: 'https://mega.io/wp-content/uploads/2023/01/Icon-3D-cloud.png'
+    },
+    {
+        name: 'Chat',
+        p: 'Send individual messages to MEGA contacts and have group chats with anyone – even non-MEGA users.',
+        img: 'https://mega.io/wp-content/uploads/2023/01/Icon-3D-chat.png'
+    },
+    {
+        name: 'Call and meet',
+        p: 'Make audio and video calls and have meetings with anyone. Guests can join a meeting or a group chat without having to sign up to MEGA.',
+        img: 'https://mega.io/wp-content/uploads/2023/01/Icon-3D-call.png'
+    }
+]
+---
+
+<SectionContent className='px-11 mb-14'>
+    <div class="flex flex-col gap-y-6 justify-center items-center w-full mb-16">
+        <H2 className='max-w-[1000px] text-center'>Store files, chat, and meet – all in one place</H2>
+        <p class="font-inter font-medium tracking-wider text-gray-secondary text-[0.92rem] text-center w-[62%] m-auto">MEGA brings cloud storage, file and folder sharing, chat, meetings, and more — together into one place.</p>
+    </div>
+    <div class="flex gap-x-7">
+        {
+            cards.map(card => (
+                <article class="border-[1px] border-gray-150 rounded-lg p-8 w-full h-[300px]">
+                    <div class="size-[80px] mb-2">
+                        <img class="object-contain size-full" src={card.img} alt="">
+                    </div>
+                    <div class="flex flex-col gap-y-3">
+                        <h5 class="font-poppins text-main font-semibold text-2xl">{card.name}</h5>
+                        <p class="text-gray-secondary">{card.p}</p>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+
+</SectionContent>
