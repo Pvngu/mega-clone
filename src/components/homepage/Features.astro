@@ -1,0 +1,60 @@
+---
+import SectionContent from '../SectionContent.astro';
+import H2 from '../H2.astro';
+import H3 from '../H3.astro';
+import P from '../P.astro';
+import Link from '../Link.astro'
+
+const items = [
+    {
+        name: 'Never run out of storage space',
+        p: 'Need lots of storage space? No problem. We have a range of competitive plans that go up to 16 TB. If you need even more space, get a Pro Flexi or Business plan, where you only pay for the extra storage space you use.',
+        linkTxt: 'See our plans',
+        url: '/pricings',
+        video: 'https://mega.io/wp-content/uploads/20221223_Mega_Main_2-big-files-1.webm'
+    },
+    {
+        name: 'Share files and folders with anyone',
+        p: 'Easily share your MEGA files and folders with friends and colleagues, even people without MEGA accounts. And when sharing, you’re still in control. You can give people read-only or full access to your folders, and can set a password or create expiring links.',
+        linkTxt: 'More about sharing',
+        url: '/share',
+        video: 'https://mega.io/wp-content/uploads/20221223_Mega_Main_3-files-sharing-1.webm'
+    },
+    {
+        name: 'Be in control of your data',
+        p: 'Whether it’s giving people limited or full access to files you share with them or preventing new group chat members from reading old messages, your data is in your hands. That’s our number one promise to you.',
+        linkTxt: 'Learn more',
+        url: '/about',
+        video: 'https://mega.io/wp-content/uploads/20221223_Mega_Main_4-safebox-1.webm'
+    },
+    {
+        name: 'Work seamlessly across all devices',
+        p: 'Easily access your cloud files through our desktop app, mobile apps or the web. And, if you sync or back up data from your computer to MEGA, all changes will automatically be replicated in real time, so you’ll be able to see the latest files, no matter where you are.',
+        video: 'https://mega.io/wp-content/uploads/20221223_Mega_Main_5-devices-1.webm'
+    },
+]
+---
+
+<SectionContent className='px-11 mb-14'>
+    <H2 className='text-center'>Why choose MEGA?</H2>
+    <div class="flex flex-col gap-y-20">
+        {
+            items.map((item, i) => (
+                <div class=`flex ${i % 2 !== 0 ? 'flex-row-reverse' : ''} items-center`>
+                    <div class="flex-grow">
+                        <video muted loop playsinline autoplay src={item.video}></video>
+                    </div>
+                    <div class="flex flex-col gap-y-7 w-[36%]">
+                        <H3 className='max-w-[80%]'>{item.name}</H3>
+                        <P>{item.p}</P>
+                        {
+                            item.linkTxt && (
+                                <Link url={item.url} >{item.linkTxt}</Link>
+                            )
+                        }
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</SectionContent>
