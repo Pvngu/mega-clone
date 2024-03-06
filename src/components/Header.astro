@@ -1,0 +1,30 @@
+---
+import ButtonPrimary from '../components/ButtonPrimary.astro'
+import ButtonSecondary from '../components/ButtonSecondary.astro'
+---
+<header class="max-h-[1320px] m-auto text-main border-b-[1px] border-gray-150">
+    <nav class="flex justify-between h-16 py-5 items-center px-10">
+        <div class="flex items-center gap-x-14">
+            <div class="size-8">
+                <img class="object-cover size-full" src="https://mega.io/wp-content/themes/megapages/megalib/images/megaicon.svg" alt="mega icon">
+            </div>
+            <div class="flex font-inter font-bold gap-x-10">
+                <div class="hover:border-b-2 border-red-500">Products</div>
+                <div class="hover:border-b-2 border-red-500">Solutions</div>
+                <div class="hover:border-b-2 border-red-500">Business</div>
+                <div class="hover:border-b-2 border-red-500">Pricing</div>
+                <div class="hover:border-b-2 border-red-500">Help</div>
+            </div>
+        </div>
+        <div class="flex gap-x-3">
+            <button class="flex items-center gap-x-1"><i class='bx bx-globe text-2xl' ></i>EN</button>
+            <button><i class='bx bx-sun text-2xl'></i></button>
+            <a href="/login">
+                <ButtonSecondary>Log In</ButtonSecondary>
+            </a>
+            <a href="/register">
+                <ButtonPrimary>Sign up</ButtonPrimary>
+            </a>
+        </div>
+    </nav>
+</header>
