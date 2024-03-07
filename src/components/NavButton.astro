@@ -4,7 +4,7 @@ interface Props { idName: string };
 const { idName } = Astro.props;
 ---
 <div class="relative h-full flex hover:border-b-4 px-2 border-red-500">
-    <input id={idName} class="h-full w-full absolute top-0 left-0 chk opacity-0 z-10 navBtns" type="checkbox">
+    <input id={idName} class="h-full w-full absolute top-0 left-0 z-10 opacity-0 chk navBtns" type="checkbox">
     <div class="flex items-center gap-x-2">
         <slot />
         <div>

@@ -2,47 +2,56 @@
 import ButtonPrimary from '../components/ButtonPrimary.astro'
 import ButtonSecondary from '../components/ButtonSecondary.astro'
 import NavButton from '../components/NavButton.astro'
+import NavContainer from '../components/NavContainer.astro'
 
 const products = [
     {
         name: 'Cloud storage',
         description: 'Keep your files in a secure place',
-        icon: 'cloud'
+        icon: 'cloud',
+        url: '/storage'
     },
     {
         name: 'Chat and Meetings',
         description: 'Secure and private conversations',
-        icon: 'chat'
+        icon: 'chat',
+        url: '/chatandmettings'
     },
     {
         name: 'Sync',
         description: 'Sync your files with MEGA',
-        icon: 'sync'
+        icon: 'sync',
+        url: '/syncing'
     },
     {
         name: 'Backup',
         description: 'Securely back up your files',
-        icon: 'server'
+        icon: 'server',
+        url: '/megabackup'
     },
     {
         name: 'Share',
         description: 'Share your files with friends',
-        icon: 'share'
+        icon: 'share',
+        url: ''
     },
     {
         name: 'Media files',
         description: 'Store and organise your media files',
-        icon: 'image'
+        icon: 'image',
+        url: 'media-files'
     },
     {
         name: 'Object storage',
         description: 'Fully scalable S3 compatible storage',
-        icon: 'data'
+        icon: 'data',
+        url: '/objectstorage'
     },
     {
         name: 'VPN',
         description: 'Protect your privacy online',
-        icon: 'shield'
+        icon: 'shield',
+        url: '/vpn'
     },
     
 ]
@@ -51,17 +60,20 @@ const solutions = [
     {
         name: 'Individuals',
         description: 'Personal accounts for everyday use',
-        icon: 'smile'   
+        icon: 'smile',
+        url: '/individuals' 
     },
     {
         name: 'Freelancers',
         description: 'Creatives, contractors, consultants and side hustlers',
-        icon: 'video'   
+        icon: 'video',
+        url: '/freelancers' 
     },
     {
         name: 'Small business',
         description: 'Startups, sole traders, family businesses and online retailers',
-        icon: 'group'
+        icon: 'group',
+        url: '/small-business'
     }
 ]
 
@@ -69,21 +81,22 @@ const help = [
     {
         name: 'Help Centre',
         description: 'FInd extensive MEGA documentation',
-        icon: 'help-circle'   
+        icon: 'help-circle',
+        url: '#'
     },
     {
         name: 'Contact us',
         description: 'Do not hesitate to contact us',
-        icon: 'message'   
+        icon: 'message',
+        url: '/contact'
     },
     {
         name: 'Bug Bounty',
         description: 'Report any bugs or issues',
-        icon: 'shield'
+        icon: 'shield',
+        url: '/bug-bounty'
     }
 ]
-
-const items = [products, solutions, help]
 ---
 <header class="text-main fixed w-full bg-night top-0">
     <nav>
@@ -123,27 +136,58 @@ const items = [products, solutions, help]
         </div>
         <!-- lower -->
         <dialog id="lower" class="bg-[#1f242a] w-full">
-            <div class="max-w-[1320px] m-auto px-6 xl:px-11 pt-14 pb-20">
-                <!-- Heading -->
-                <div class="uppercase font-inter font-bold text-xs text-gray-secondary tracking-widest mb-4">Products</div>
-                <!-- List -->
-                <div class="hidden navItems">
-                    <div class="flex gap-10 flex-wrap">
+            <div class="max-w-[1320px] m-auto px-6 xl:px-11 pt-14 pb-[4.1rem]">
+                <NavContainer name='products'>
                     {
-                        products.map(product => (
-                            <div class="flex gap-x-3 w-[265px]">
-                                <div class="size-8 text-main">
-                                    <i class=`bx bx-${product.icon} text-3xl`></i>
+                        products.map(item => (
+                            <a href={item.url} class="group">
+                                <div class="flex gap-x-3 w-[265px]">
+                                    <div class="size-8 text-main group-hover:text-mega-red">
+                                        <i class=`bx bx-${item.icon} text-3xl`></i>
+                                    </div>
+                                    <div class="font-inter">
+                                        <div class="text-main group-hover:text-mega-red">{item.name}</div>
+                                        <div class="text-gray-secondary text-sm">{item.description}</div>
+                                    </div>
                                 </div>
-                                <div class="font-inter">
-                                    <div class="text-main">{product.name}</div>
-                                    <div class="text-gray-secondary text-sm">{product.description}</div>
-                                </div>
-                            </div>
+                            </a>
                         ))
                     }
-                    </div>
-                </div>
+                </NavContainer>
+                <NavContainer name='solutions'>
+                    {
+                        solutions.map(item => (
+                            <a href={item.url}>
+                                <div class="flex gap-x-3 w-[265px]">
+                                    <div class="size-8 text-main">
+                                        <i class=`bx bx-${item.icon} text-3xl`></i>
+                                    </div>
+                                    <div class="font-inter">
+                                        <div class="text-main">{item.name}</div>
+                                        <div class="text-gray-secondary text-sm">{item.description}</div>
+                                    </div>
+                                </div>
+                            </a>
+                        ))
+                    }
+                </NavContainer>
+                <NavContainer>
+                    {
+                        help.map(item => (
+                            <a href={item.url}>
+                                <div class="flex gap-x-3 w-[265px]">
+                                    <div class="size-8 text-main">
+                                        <i class=`bx bx-${item.icon} text-3xl`></i>
+                                    </div>
+                                    <div class="font-inter">
+                                        <div class="text-main">{item.name}</div>
+                                        <div class="text-gray-secondary text-sm">{item.description}</div>
+                                    </div>
+                                </div>
+                            </a>
+                        ))
+                    }
+                </NavContainer>
             </div>
         </dialog>
     </nav>
@@ -157,10 +201,14 @@ const items = [products, solutions, help]
     btns.forEach((btn, i) => {
         btn.addEventListener('change', () => {
             if(btn.checked) {
-                items[i].classList.remove('hidden')
+                items[i].classList.remove('hidden');
                 dialog.show();
             }
-            else dialog.close();
+            else {
+                btn.classList.remove('active');
+                items[i].classList.add('hidden');
+                dialog.close();
+            }
         })
     })
 </script>
