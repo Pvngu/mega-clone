@@ -1,17 +1,48 @@
 ---
 import SectionContent from '../SectionContent.astro'
-import H3 from '../H3.astro'
+import H2 from '../H2.astro'
+import H5 from '../H5.astro'
 import P from '../P.astro'
-import Link from '../Link.astro'
+import ButtonPrimary from '../ButtonPrimary.astro'
 ---
-<SectionContent className='px-11 py-20 mb-14'>
-    <div class="flex gap-x-5">
-        <div class="w-full">
-            <H3>Millions of people trust us</H3>
+<SectionContent className='px-6 xl:px-11 py-20 mb-14'>
+    <div class="flex max-lg:flex-col gap-x-8 gap-y-8">
+        <div class="flex flex-col gap-y-8 lg:w-[40%]">
+            <div class="flex justify-between">
+                <H2>Millions of people trust us</H2>
+                <a class="lg:hidden max-md:hidden" href="/register">
+                    <ButtonPrimary>Sign up for free</ButtonPrimary>
+                </a>
+            </div>
             <P>Join the millions of individuals and businesses who trust MEGA to store and protect their data in the cloud.</P>
+            <a class="max-lg:hidden max-md:inline" href="/register">
+                <ButtonPrimary>Sign up for free</ButtonPrimary>
+            </a>
         </div>
-        <div class="w-full">
-            
+        <div class="flex-grow">
+            <div class="md:border-[1px] border-gray-150 rounded-2xl md:p-10 max-lg:w-[80%] w-fit relative">
+                <div class="flex max-lg:flex-col gap-x-8 py-6 border-b-[1px] border-gray-150">
+                    <div class="size-20">
+                        <img src="https://mega.io/wp-content/uploads/2023/03/20230215_Mega_icons_upd_00003.png" alt="user icon">
+                    </div>
+                    <div>
+                        <H5 className='text-gray-secondary mb-3'>Registered users</H5>
+                        <span class="text-3xl md:text-5xl font-poppins font-semibold text-main">301,837,200</span>
+                    </div>
+                </div>
+                <div class="flex max-lg:flex-col gap-x-8 py-6">
+                    <div class="size-20">
+                        <img src="https://mega.io/wp-content/uploads/2023/03/20230221_Mega_icons_00025-1.png" alt="user icon">
+                    </div>
+                    <div>
+                        <H5 className='text-gray-secondary mb-3'>Uploaded files</H5>
+                        <span class="text-3xl md:text-5xl font-poppins font-semibold text-main">159,982,504,200</span>
+                    </div>
+                </div>
+                <div class="size-56 absolute -right-24 -bottom-24 max-md:hidden">
+                    <img src="https://mega.io/wp-content/uploads/2023/03/20230215_Mega_icons_upd_00017.png" alt="">
+                </div>
+            </div>
         </div>
     </div>
 </SectionContent>
