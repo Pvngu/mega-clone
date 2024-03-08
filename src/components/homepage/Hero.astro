@@ -1,14 +1,15 @@
 ---
+import { t } from 'i18next';
 import SectionContent from '../SectionContent.astro';
 ---
 <SectionContent className='h-[calc(100vh+68px)]'>
     <div class="flex size-full justify-center items-center text-main md:max-w-[70%] m-auto">
         <div class="flex flex-col justify-center text-center gap-y-8">
-            <h1 class="font-poppins text-3xl md:text-5xl lg:text-6xl max-md:px-10 leading font-bold m-auto">Online privacy for everyone</h1>
-            <p class="font-inter text-lg px-10 text-center">Privacy is not an option with MEGA, it’s standard. That’s because we believe that everyone should be able to store data and communicate securely and privately online.</p>
+            <h1 class="font-poppins text-3xl md:text-5xl lg:text-6xl max-md:px-10 leading font-bold m-auto">{t("HERO.TITLE")}</h1>
+            <p class="font-inter text-lg px-12 text-center">{t("HERO.DESCRIPTION")}</p>
             <div class="mt-4">
                 <a href="/register">
-                    <button class="bg-mega-red font-inter font-semibold px-6 py-3 rounded-lg">Try MEGA for free</button>
+                    <button class="bg-mega-red font-inter font-semibold px-6 py-3 rounded-lg">{t("HERO.BUTTON")}</button>
                 </a>
             </div>
         </div>

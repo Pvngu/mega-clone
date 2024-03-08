@@ -1,0 +1,95 @@
+{
+    "SEO_TITLE": "Home - MEGA",
+    "HEADER": {
+        "PRODUCTS": "Products",
+        "PRODUCTS_CONTENT_TITLE_1": "Cloud storage",
+        "PRODUCTS_CONTENT_DESCRIPTION_1": "Keep your files in a secure place",
+        "PRODUCTS_CONTENT_TITLE_2": "Chat and Meetings",
+        "PRODUCTS_CONTENT_DESCRIPTION_2": "Secure and private conversations",
+        "PRODUCTS_CONTENT_TITLE_3": "Sync",
+        "PRODUCTS_CONTENT_DESCRIPTION_3": "Sync your files with MEGA",
+        "PRODUCTS_CONTENT_TITLE_4": "Backup",
+        "PRODUCTS_CONTENT_DESCRIPTION_4": "Securely back up your files",
+        "PRODUCTS_CONTENT_TITLE_5": "Share",
+        "PRODUCTS_CONTENT_DESCRIPTION_5": "Share your files with friends",
+        "PRODUCTS_CONTENT_TITLE_6": "Media files",
+        "PRODUCTS_CONTENT_DESCRIPTION_6": "Store and organise your media files",
+        "PRODUCTS_CONTENT_TITLE_7": "Object storage",
+        "PRODUCTS_CONTENT_DESCRIPTION_7": "Fully scalable S3 compatible storage",
+        "PRODUCTS_CONTENT_TITLE_8": "VPN",
+        "PRODUCTS_CONTENT_DESCRIPTION_8": "Protect your privacy online",
+        "SOLUTIONS": "Solutions",
+        "SOLUTIONS_CONTENT_TITLE_1": "Individuals",
+        "SOLUTIONS_CONTENT_DESCRIPTION_1": "Personal accounts for everyday use",
+        "SOLUTIONS_CONTENT_TITLE_2": "Freelancers",
+        "SOLUTIONS_CONTENT_DESCRIPTION_2": "Creatives, contractors, consultants and side hustlers",
+        "SOLUTIONS_CONTENT_TITLE_3": "Small business",
+        "SOLUTIONS_CONTENT_DESCRIPTION_3": "Startups, sole traders, family businesses and online retailers",
+        "BUSINESS": "Business",
+        "PRICING": "Pricing",
+        "HELP": "Help",
+        "HELP_CONTENT_TITLE_1": "Help Centre",
+        "HELP_CONTENT_DESCRIPTION_1": "Find extensive MEGA documentation",
+        "HELP_CONTENT_TITLE_2": "Contact us",
+        "HELP_CONTENT_DESCRIPTION_2": "Do not hesitate to contact us",
+        "HELP_CONTENT_TITLE_3": "Bug Bounty",
+        "HELP_CONTENT_DESCRIPTION_3": "Report any bugs or issues"
+    },
+    "HERO": {
+        "TITLE": "Online privacy for everyone",
+        "DESCRIPTION": "Privacy is not an option with MEGA, it’s standard. That’s because we believe that everyone should be able to store data and communicate securely and privately online.",
+        "BUTTON": "Try MEGA for free"
+    },
+    "CARDS": {
+        "TITLE": "Store files, chat, and meet – all in one place",
+        "DESCRIPTION": "MEGA brings cloud storage, file and folder sharing, chat, meetings, and more — together into one place.",
+        "CONTENT_TITLE_1": "Cloud storage",
+        "CONTENT_DESCRIPTION_1": "Store data securely online. Get lots of storage space, easily extend your storage, and upload big files and folders.",
+        "CONTENT_TITLE_2": "Chat",
+        "CONTENT_DESCRIPTION_2": "Send individual messages to MEGA contacts and have group chats with anyone – even non-MEGA users.",
+        "CONTENT_TITLE_3": "Call and meet",
+        "CONTENT_DESCRIPTION_3": "Make audio and video calls and have meetings with anyone. Guests can join a meeting or a group chat without having to sign up to MEGA."
+    },
+    "SECURITY": {
+        "TITLE": "Security that’s always on",
+        "DESCRIPTION": "We protect your data with zero-knowledge encryption, the highest level of online security and privacy. This means that only the sender and the recipient have the keys needed to see, read, or listen to the data stored or shared on MEGA.<br><br>For anyone else, including MEGA, the data would appear as gibberish, and they would find it impossible to read or understand.",
+        "LINK": "More about security"
+    },
+    "FEATURES": {
+        "TITLE": "Why choose MEGA?",
+        "CONTENT_TITLE_1": "Never run out of storage space",
+        "CONTENT_DESCRIPTION_1": "Need lots of storage space? No problem. We have a range of competitive plans that go up to 16 TB. If you need even more space, get a Pro Flexi or Business plan, where you only pay for the extra storage space you use.",
+        "CONTENT_LINK_1": "See our plans",
+        "CONTENT_TITLE_2": "Share files and folders with anyone",
+        "CONTENT_DESCRIPTION_2": "Easily share your MEGA files and folders with friends and colleagues, even people without MEGA accounts. And when sharing, you’re still in control. You can give people read-only or full access to your folders, and can set a password or create expiring links.",
+        "CONTENT_LINK_2": "More about sharing",
+        "CONTENT_TITLE_3": "Be in control of your data",
+        "CONTENT_DESCRIPTION_3": "Whether it’s giving people limited or full access to files you share with them or preventing new group chat members from reading old messages, your data is in your hands. That’s our number one promise to you.",
+        "CONTENT_LINK_3": "Learn more",
+        "CONTENT_TITLE_4": "Work seamlessly across all devices",
+        "CONTENT_DESCRIPTION_4": "Easily access your cloud files through our desktop app, mobile apps or the web. And, if you sync or back up data from your computer to MEGA, all changes will automatically be replicated in real time, so you’ll be able to see the latest files, no matter where you are."
+    },
+    "COMPARE": {
+        "TITLE": "How does MEGA compare?",
+        "CONTENT_DIV_1": "per TB per month",
+        "CONTENT_DIV_2": "End-to-end encryption",
+        "CONTENT_DIV_3": "Price based on"
+    },
+    "BLUECARD": {
+        "RELEASE": "NEW",
+        "TITLE": "MEGA VPN – Protect your privacy online",
+        "DESCRIPTION": "Secure your Android device with a fast, encrypted internet connection that keeps you safe online.<br><br>Available exclusively to MEGA Pro plan subscribers.",
+        "BUTTON": "More about MEGA VPN"
+    },
+    "BANNER": {
+        "TITLE": "Grow your business with MEGA",
+        "DESCRIPTION": "Bring your team together online with MEGA for Business. From freelancers to startups and all the way to enterprises, MEGA is the perfect online tool to help you grow your business and your team. Store and protect important documents and transform how your teams collaborate with MEGA.",
+        "BUTTON": "Learn more"
+    },
+    "PROOF": {
+        "TITLE": "Millions of people trust us",
+        "BUTTON": "Sign up for free",
+        "CONTENT_TITLE_1": "Registered users",
+        "CONTENT_TITLE_2": "Uploaded files"
+    }
+}

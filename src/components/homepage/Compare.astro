@@ -1,4 +1,5 @@
 ---
+import { t } from 'i18next';
 import SectionContent from '../SectionContent.astro';
 import H3 from '../H3.astro';
 
@@ -28,7 +29,7 @@ const items = [
 ---
 
 <SectionContent className='px-6 xl:px-11 py-20'>
-    <H3 className='text-center mb-12'>How does MEGA compare?</H3>
+    <H3 className='text-center mb-12'>{t("COMPARE.TITLE")}</H3>
     <div class="flex max-md:flex-col gap-7">
         {
             items.map(item => (
@@ -41,16 +42,16 @@ const items = [
                     </div>
                     <div class="flex flex-col gap-y-2">
                         <div class="text-main font-poppins font-semibold text-3xl md:text-5xl">€{item.price}*</div>
-                        <div class="text-gray-secondary">per TB per month</div>
+                        <div class="text-gray-secondary">{t("COMPARE.CONTENT_DIV_1")}</div>
                     </div>
                     <div>
                         <div class="flex items-center gap-x-1 text-main">
                             <i class=`bx bx-${item.encryption ? 'check' : 'x'} text-3xl`></i>
-                            <div class="font-inter font-semibold">End-to-end encryption</div>
+                            <div class="font-inter font-semibold">{t("COMPARE.CONTENT_DIV_2")}</div>
                         </div>
                     </div>
                     <div class="text-gray-secondary font-inter text-sm">
-                        <div>* Price based on {item.plan}</div>
+                        <div>* {t("COMPARE.CONTENT_DIV_3")} {item.plan}</div>
                     </div>
                 </div>
             ))

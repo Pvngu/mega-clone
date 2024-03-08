@@ -1,4 +1,5 @@
 ---
+import { t } from 'i18next';
 import SectionContent from '../SectionContent.astro'
 import H2 from '../H2.astro'
 import P from '../P.astro'
@@ -7,9 +8,9 @@ import Link from '../Link.astro'
 <SectionContent className='px-6 xl:px-11 py-20 mb-14'>
     <div class="flex items-center max-md:flex-col-reverse">
         <div class="md:w-5/12 flex flex-col gap-y-5">
-            <H2 className='text-left'>Security that’s always on</H2>
-            <P className="leading-snug">We protect your data with zero-knowledge encryption, the highest level of online security and privacy. This means that only the sender and the recipient have the keys needed to see, read, or listen to the data stored or shared on MEGA.<br><br>For anyone else, including MEGA, the data would appear as gibberish, and they would find it impossible to read or understand.</P>
-            <Link url='/security'>More about security</Link>
+            <H2 className='text-left'>{t("SECURITY.TITLE")}</H2>
+            <P className="leading-snug">{t("SECURITY.DESCRIPTION")}</P>
+            <Link url='/security'>{t("SECURITY.LINK")}</Link>
         </div>
         <div class="flex-grow">
             <video muted loop playsinline autoplay src="https://mega.io/wp-content/uploads/20221223_Mega_Main_1-encryption-padlock-1.webm"></video>

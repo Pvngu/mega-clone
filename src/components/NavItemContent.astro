@@ -1,0 +1,25 @@
+---
+interface Props {
+    name: string,
+    description: string,
+    icon: string,
+    url: string
+};
+const {
+    name,
+    description,
+    icon,
+    url
+} = Astro.props;
+---
+<a href={url} class="group">
+    <div class="flex gap-x-3 w-[265px]">
+        <div class="size-8 text-main group-hover:text-mega-red">
+            <i class=`bx bx-${icon} text-3xl`></i>
+        </div>
+        <div class="font-inter">
+            <div class="text-main group-hover:text-mega-red">{name}</div>
+            <div class="text-gray-secondary text-sm">{description}</div>
+        </div>
+    </div>
+</a>

@@ -1,102 +1,9 @@
 ---
+import { t } from 'i18next';
 import ButtonPrimary from '../components/ButtonPrimary.astro'
 import ButtonSecondary from '../components/ButtonSecondary.astro'
 import DropdownButton from '../components/DropdownButton.astro'
-import NavContainer from '../components/NavContainer.astro'
-
-const products = [
-    {
-        name: 'Cloud storage',
-        description: 'Keep your files in a secure place',
-        icon: 'cloud',
-        url: '/storage'
-    },
-    {
-        name: 'Chat and Meetings',
-        description: 'Secure and private conversations',
-        icon: 'chat',
-        url: '/chatandmettings'
-    },
-    {
-        name: 'Sync',
-        description: 'Sync your files with MEGA',
-        icon: 'sync',
-        url: '/syncing'
-    },
-    {
-        name: 'Backup',
-        description: 'Securely back up your files',
-        icon: 'server',
-        url: '/megabackup'
-    },
-    {
-        name: 'Share',
-        description: 'Share your files with friends',
-        icon: 'share',
-        url: ''
-    },
-    {
-        name: 'Media files',
-        description: 'Store and organise your media files',
-        icon: 'image',
-        url: 'media-files'
-    },
-    {
-        name: 'Object storage',
-        description: 'Fully scalable S3 compatible storage',
-        icon: 'data',
-        url: '/objectstorage'
-    },
-    {
-        name: 'VPN',
-        description: 'Protect your privacy online',
-        icon: 'shield',
-        url: '/vpn'
-    },
-    
-]
-
-const solutions = [
-    {
-        name: 'Individuals',
-        description: 'Personal accounts for everyday use',
-        icon: 'smile',
-        url: '/individuals' 
-    },
-    {
-        name: 'Freelancers',
-        description: 'Creatives, contractors, consultants and side hustlers',
-        icon: 'video',
-        url: '/freelancers' 
-    },
-    {
-        name: 'Small business',
-        description: 'Startups, sole traders, family businesses and online retailers',
-        icon: 'group',
-        url: '/small-business'
-    }
-]
-
-const help = [
-    {
-        name: 'Help Centre',
-        description: 'FInd extensive MEGA documentation',
-        icon: 'help-circle',
-        url: '#'
-    },
-    {
-        name: 'Contact us',
-        description: 'Do not hesitate to contact us',
-        icon: 'message',
-        url: '/contact'
-    },
-    {
-        name: 'Bug Bounty',
-        description: 'Report any bugs or issues',
-        icon: 'shield',
-        url: '/bug-bounty'
-    }
-]
+import NavItemContent from '../components/NavItemContent.astro'
 ---
 <header class="text-main fixed w-full bg-night top-0 z-30">
     <nav>
@@ -108,11 +15,11 @@ const help = [
                         <img class="object-cover size-full" src="https://mega.io/wp-content/themes/megapages/megalib/images/megaicon.svg" alt="mega icon">
                     </a>
                     <div class="flex items-center font-inter font-bold gap-x-8 max-lg:hidden h-full">
-                        <DropdownButton idName='productsBtn'>Products</DropdownButton>
-                        <DropdownButton idName='solutionsBtn'>Solutions</DropdownButton>
-                        <div class="hover:border-b-2 border-red-500">Business</div>
-                        <div class="hover:border-b-2 border-red-500">Pricing</div>
-                        <DropdownButton idName='helpBtn'>Help</DropdownButton>
+                        <DropdownButton idName='productsBtn'>{t("HEADER.PRODUCTS")}</DropdownButton>
+                        <DropdownButton idName='solutionsBtn'>{t("HEADER.SOLUTIONS")}</DropdownButton>
+                        <div class="hover:border-b-2 border-red-500">{t("HEADER.BUSINESS")}</div>
+                        <div class="hover:border-b-2 border-red-500">{t("HEADER.PRICING")}</div>
+                        <DropdownButton idName='helpBtn'>{t("HEADER.HELP")}</DropdownButton>
                     </div>
                 </div>
                 <div class="flex gap-x-5 font-inter">
@@ -137,57 +44,109 @@ const help = [
         <!-- lower -->
         <dialog id="lower" class="bg-[#1f242a] w-full">
             <div class="max-w-[1320px] m-auto px-6 xl:px-11 pt-14 pb-[4.1rem]">
-                <NavContainer name='products'>
-                    {
-                        products.map(item => (
-                            <a href={item.url} class="group">
-                                <div class="flex gap-x-3 w-[265px]">
-                                    <div class="size-8 text-main group-hover:text-mega-red">
-                                        <i class=`bx bx-${item.icon} text-3xl`></i>
-                                    </div>
-                                    <div class="font-inter">
-                                        <div class="text-main group-hover:text-mega-red">{item.name}</div>
-                                        <div class="text-gray-secondary text-sm">{item.description}</div>
-                                    </div>
-                                </div>
-                            </a>
-                        ))
-                    }
-                </NavContainer>
-                <NavContainer name='solutions'>
-                    {
-                        solutions.map(item => (
-                            <a href={item.url}>
-                                <div class="flex gap-x-3 w-[265px]">
-                                    <div class="size-8 text-main">
-                                        <i class=`bx bx-${item.icon} text-3xl`></i>
-                                    </div>
-                                    <div class="font-inter">
-                                        <div class="text-main">{item.name}</div>
-                                        <div class="text-gray-secondary text-sm">{item.description}</div>
-                                    </div>
-                                </div>
-                            </a>
-                        ))
-                    }
-                </NavContainer>
-                <NavContainer>
-                    {
-                        help.map(item => (
-                            <a href={item.url}>
-                                <div class="flex gap-x-3 w-[265px]">
-                                    <div class="size-8 text-main">
-                                        <i class=`bx bx-${item.icon} text-3xl`></i>
-                                    </div>
-                                    <div class="font-inter">
-                                        <div class="text-main">{item.name}</div>
-                                        <div class="text-gray-secondary text-sm">{item.description}</div>
-                                    </div>
-                                </div>
-                            </a>
-                        ))
-                    }
-                </NavContainer>
+                <div class="hidden navItems">
+                    <!-- Heading -->
+                    <div class="uppercase font-inter font-bold text-xs text-gray-secondary tracking-widest mb-4">{t("HEADER.PRODUCTS")}</div>
+                    <!-- List -->
+                    <div class="flex gap-10 flex-wrap">
+                        <NavItemContent 
+                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_1")} 
+                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_1")} 
+                        icon="cloud"
+                        url="/storage"
+                    />
+                    <NavItemContent 
+                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_2")} 
+                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_2")} 
+                        icon="chat"
+                        url="/chatandmettings"
+                    />
+                    <NavItemContent 
+                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_3")} 
+                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_3")} 
+                        icon="sync"
+                        url="/syncing"
+                    />
+                    <NavItemContent 
+                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_4")} 
+                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_4")} 
+                        icon="server"
+                        url="/megabackup"
+                    />
+                    <NavItemContent 
+                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_5")} 
+                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_5")} 
+                        icon="share"
+                        url="/share"
+                    />
+                    <NavItemContent 
+                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_6")} 
+                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_6")} 
+                        icon="image"
+                        url="/media-files"
+                    />
+                    <NavItemContent 
+                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_7")} 
+                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_7")} 
+                        icon="data"
+                        url="/objectstorage"
+                    />
+                    <NavItemContent 
+                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_8")} 
+                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_8")} 
+                        icon="shield"
+                        url="/vpn"
+                    />
+                    </div>
+                </div>
+                <div class="hidden navItems">
+                    <!-- Heading -->
+                    <div class="uppercase font-inter font-bold text-xs text-gray-secondary tracking-widest mb-4">{t("HEADER.SOLUTIONS")}</div>
+                    <!-- List -->
+                    <div class="flex gap-10 flex-wrap">
+                        <NavItemContent 
+                            name={t('HEADER.SOLUTIONS_CONTENT_TITLE_1')} 
+                            description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_1')} 
+                            icon="smile"
+                            url="/individuals"
+                        />
+                        <NavItemContent 
+                            name={t('HEADER.SOLUTIONS_CONTENT_TITLE_2')} 
+                            description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_2')} 
+                            icon="video"
+                            url="/freelancers"
+                        />
+                        <NavItemContent 
+                            name={t('HEADER.SOLUTIONS_CONTENT_TITLE_3')} 
+                            description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_3')} 
+                            icon="group"
+                            url="/small-business"
+                        />
+                    </div>
+                </div>
+                <div class="hidden navItems">
+                    <!-- List -->
+                    <div class="flex gap-10 flex-wrap">
+                        <NavItemContent 
+                            name={t('HEADER.HELP_CONTENT_TITLE_1')} 
+                            description={t('HEADER.HELP_CONTENT_DESCRIPTION_1')} 
+                            icon="help-circle"
+                            url="#"
+                        />
+                        <NavItemContent 
+                            name={t('HEADER.HELP_CONTENT_TITLE_2')} 
+                            description={t('HEADER.HELP_CONTENT_DESCRIPTION_2')} 
+                            icon="message"
+                            url="/contact"
+                        />
+                        <NavItemContent 
+                            name={t('HEADER.HELP_CONTENT_TITLE_3')} 
+                            description={t('HEADER.HELP_CONTENT_DESCRIPTION_3')} 
+                            icon="shield"
+                            url="/bug-bounty"
+                        />
+                    </div>
+                </div>
             </div>
         </dialog>
     </nav>

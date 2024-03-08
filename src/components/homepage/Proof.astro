@@ -1,4 +1,5 @@
 ---
+import { t } from 'i18next';
 import SectionContent from '../SectionContent.astro'
 import H2 from '../H2.astro'
 import H5 from '../H5.astro'
@@ -9,14 +10,14 @@ import ButtonPrimary from '../ButtonPrimary.astro'
     <div class="flex max-lg:flex-col gap-x-8 gap-y-8">
         <div class="flex flex-col gap-y-8 lg:w-[40%]">
             <div class="flex justify-between">
-                <H2>Millions of people trust us</H2>
+                <H2>{t("PROOF.TITLE")}</H2>
                 <a class="lg:hidden max-md:hidden" href="/register">
-                    <ButtonPrimary>Sign up for free</ButtonPrimary>
+                    <ButtonPrimary>{t("PROOF.BUTTON")}</ButtonPrimary>
                 </a>
             </div>
             <P>Join the millions of individuals and businesses who trust MEGA to store and protect their data in the cloud.</P>
             <a class="max-lg:hidden max-md:inline" href="/register">
-                <ButtonPrimary>Sign up for free</ButtonPrimary>
+                <ButtonPrimary>{t("PROOF.BUTTON")}</ButtonPrimary>
             </a>
         </div>
         <div class="flex-grow">
@@ -26,7 +27,7 @@ import ButtonPrimary from '../ButtonPrimary.astro'
                         <img src="https://mega.io/wp-content/uploads/2023/03/20230215_Mega_icons_upd_00003.png" alt="user icon">
                     </div>
                     <div>
-                        <H5 className='text-gray-secondary mb-3'>Registered users</H5>
+                        <H5 className='text-gray-secondary mb-3'>{t("PROOF.CONTENT_TITLE_1")}</H5>
                         <span class="text-3xl md:text-5xl font-poppins font-semibold text-main">301,837,200</span>
                     </div>
                 </div>
@@ -35,7 +36,7 @@ import ButtonPrimary from '../ButtonPrimary.astro'
                         <img src="https://mega.io/wp-content/uploads/2023/03/20230221_Mega_icons_00025-1.png" alt="user icon">
                     </div>
                     <div>
-                        <H5 className='text-gray-secondary mb-3'>Uploaded files</H5>
+                        <H5 className='text-gray-secondary mb-3'>{t("PROOF.CONTENT_TITLE_2")}</H5>
                         <span class="text-3xl md:text-5xl font-poppins font-semibold text-main">159,982,504,200</span>
                     </div>
                 </div>

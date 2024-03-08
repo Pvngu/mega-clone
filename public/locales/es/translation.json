@@ -1,0 +1,95 @@
+{
+    "SEO_TITLE": "Inicio - MEGA",
+    "HEADER": {
+        "PRODUCTS": "Productos",
+        "PRODUCTS_CONTENT_TITLE_1": "Almacenamiento en la nube",
+        "PRODUCTS_CONTENT_DESCRIPTION_1": "Mantén tus archivos en un lugar seguro",
+        "PRODUCTS_CONTENT_TITLE_2": "Chat y Reuniones",
+        "PRODUCTS_CONTENT_DESCRIPTION_2": "Conversaciones seguras y privadas",
+        "PRODUCTS_CONTENT_TITLE_3": "Sincronización",
+        "PRODUCTS_CONTENT_DESCRIPTION_3": "Sincroniza tus archivos con MEGA",
+        "PRODUCTS_CONTENT_TITLE_4": "Copia de seguridad",
+        "PRODUCTS_CONTENT_DESCRIPTION_4": "Respaldar tus archivos de manera segura",
+        "PRODUCTS_CONTENT_TITLE_5": "Compartir",
+        "PRODUCTS_CONTENT_DESCRIPTION_5": "Comparte tus archivos con amigos",
+        "PRODUCTS_CONTENT_TITLE_6": "Archivos multimedia",
+        "PRODUCTS_CONTENT_DESCRIPTION_6": "Almacena y organiza tus archivos multimedia",
+        "PRODUCTS_CONTENT_TITLE_7": "Almacenamiento de objetos",
+        "PRODUCTS_CONTENT_DESCRIPTION_7": "Almacenamiento completamente escalable compatible con S3",
+        "PRODUCTS_CONTENT_TITLE_8": "VPN",
+        "PRODUCTS_CONTENT_DESCRIPTION_8": "Protege tu privacidad en línea",
+        "SOLUTIONS": "Soluciones",
+        "SOLUTIONS_CONTENT_TITLE_1": "Individuos",
+        "SOLUTIONS_CONTENT_DESCRIPTION_1": "Cuentas personales para uso diario",
+        "SOLUTIONS_CONTENT_TITLE_2": "Autónomos",
+        "SOLUTIONS_CONTENT_DESCRIPTION_2": "Creativos, contratistas, consultores y emprendedores",
+        "SOLUTIONS_CONTENT_TITLE_3": "Pequeñas empresas",
+        "SOLUTIONS_CONTENT_DESCRIPTION_3": "Startups, autónomos, negocios familiares y minoristas en línea",
+        "BUSINESS": "Negocios",
+        "PRICING": "Precios",
+        "HELP": "Ayuda",
+        "HELP_CONTENT_TITLE_1": "Centro de ayuda",
+        "HELP_CONTENT_DESCRIPTION_1": "Encuentra documentación extensa de MEGA",
+        "HELP_CONTENT_TITLE_2": "Contáctanos",
+        "HELP_CONTENT_DESCRIPTION_2": "No dudes en contactarnos",
+        "HELP_CONTENT_TITLE_3": "Recompensa por errores",
+        "HELP_CONTENT_DESCRIPTION_3": "Informa sobre cualquier error o problema"
+    },
+    "HERO": {
+        "TITLE": "Privacidad en línea para todos",
+        "DESCRIPTION": "La privacidad no es una opción con MEGA, es estándar. Esto se debe a que creemos que todos deberían poder almacenar datos y comunicarse de manera segura y privada en línea.",
+        "BUTTON": "Prueba MEGA gratis"
+    },
+    "CARDS": {
+        "TITLE": "Almacena archivos, chatea y reúnete, todo en un solo lugar",
+        "DESCRIPTION": "MEGA reúne almacenamiento en la nube, compartición de archivos y carpetas, chat, reuniones y más, todo en un solo lugar.",
+        "CONTENT_TITLE_1": "Almacenamiento en la nube",
+        "CONTENT_DESCRIPTION_1": "Almacena datos de manera segura en línea. Obtén mucho espacio de almacenamiento, amplía fácilmente tu almacenamiento y carga archivos y carpetas grandes.",
+        "CONTENT_TITLE_2": "Chat",
+        "CONTENT_DESCRIPTION_2": "Envía mensajes individuales a contactos de MEGA y ten chats grupales con cualquier persona, incluso usuarios que no sean de MEGA.",
+        "CONTENT_TITLE_3": "Llamadas y reuniones",
+        "CONTENT_DESCRIPTION_3": "Realiza llamadas de audio y video y tiene reuniones con cualquier persona. Los invitados pueden unirse a una reunión o a un chat grupal sin necesidad de registrarse en MEGA."
+    },
+    "SECURITY": {
+        "TITLE": "Seguridad siempre activa",
+        "DESCRIPTION": "Protegemos tus datos con cifrado de conocimiento cero, el más alto nivel de seguridad y privacidad en línea. Esto significa que solo el remitente y el destinatario tienen las claves necesarias para ver, leer o escuchar los datos almacenados o compartidos en MEGA.<br><br>Para cualquier otra persona, incluido MEGA, los datos aparecerían como garabatos, y les resultaría imposible leer o entenderlos.",
+        "LINK": "Más sobre seguridad"
+    },
+    "FEATURES": {
+        "TITLE": "¿Por qué elegir MEGA?",
+        "CONTENT_TITLE_1": "Nunca te quedes sin espacio de almacenamiento",
+        "CONTENT_DESCRIPTION_1": "¿Necesitas mucho espacio de almacenamiento? No hay problema. Tenemos una variedad de planes competitivos que van hasta 16 TB. Si necesitas aún más espacio, obtén un plan Pro Flexi o Business, donde solo pagas por el espacio de almacenamiento adicional que uses.",
+        "CONTENT_LINK_1": "Ver nuestros planes",
+        "CONTENT_TITLE_2": "Comparte archivos y carpetas con cualquier persona",
+        "CONTENT_DESCRIPTION_2": "Comparte fácilmente tus archivos y carpetas de MEGA con amigos y colegas, incluso personas sin cuentas de MEGA. Y cuando compartes, aún tienes control. Puedes dar a las personas acceso solo de lectura o acceso completo a tus carpetas, y puedes establecer una contraseña o crear enlaces que caducan.",
+        "CONTENT_LINK_2": "Más sobre compartir",
+        "CONTENT_TITLE_3": "Controla tus datos",
+        "CONTENT_DESCRIPTION_3": "Ya sea dando a las personas acceso limitado o completo a los archivos que compartes con ellas o evitando que los nuevos miembros del chat grupal lean mensajes antiguos, tus datos están en tus manos. Esa es nuestra promesa número uno para ti.",
+        "CONTENT_LINK_3": "Aprende más",
+        "CONTENT_TITLE_4": "Trabaja de manera fluida en todos los dispositivos",
+        "CONTENT_DESCRIPTION_4": "Accede fácilmente a tus archivos en la nube a través de nuestra aplicación de escritorio, aplicaciones móviles o la web. Y, si sincronizas o respaldas datos desde tu computadora a MEGA, todos los cambios se replicarán automáticamente en tiempo real, por lo que podrás ver los últimos archivos, no importa dónde estés."
+    },
+    "COMPARE": {
+        "TITLE": "¿Cómo se compara MEGA?",
+        "CONTENT_DIV_1": "por TB por mes",
+        "CONTENT_DIV_2": "Cifrado de extremo a extremo",
+        "CONTENT_DIV_3": "Precio basado en"
+    },
+    "BLUECARD": {
+        "RELEASE": "NUEVO",
+        "TITLE": "MEGA VPN Protege tu privacidad en línea",
+        "DESCRIPTION": "Asegura tu dispositivo Android con una conexión a internet rápida y encriptada que te mantiene seguro en línea.<br><br>Disponible exclusivamente para suscriptores del plan Pro de MEGA.",
+        "BUTTON": "Más sobre MEGA VPN"
+    },
+    "BANNER": {
+        "TITLE": "Haz crecer tu negocio con MEGA",
+        "DESCRIPTION": "Reúne a tu equipo en línea con MEGA for Business. Desde autónomos hasta startups y empresas, MEGA es la herramienta en línea perfecta para ayudarte a hacer crecer tu negocio y tu equipo. Almacena y protege documentos importantes y transforma cómo colaboran tus equipos con MEGA.",
+        "BUTTON": "Más información"
+    },
+    "PROOF": {
+        "TITLE": "Millones de personas confían en nosotros",
+        "BUTTON": "Regístrate gratis",
+        "CONTENT_TITLE_1": "Usuarios registrados",
+        "CONTENT_TITLE_2": "Archivos subidos"
+    }
+}
