@@ -1,9 +1,12 @@
 ---
+import { getLangFromUrl } from '../i18n/utils';
 import { t } from 'i18next';
 import ButtonPrimary from '../components/ButtonPrimary.astro'
 import ButtonSecondary from '../components/ButtonSecondary.astro'
 import DropdownButton from '../components/DropdownButton.astro'
 import NavItemContent from '../components/NavItemContent.astro'
+
+const lang = getLangFromUrl(Astro.url);
 ---
 <header class="text-main fixed w-full bg-night top-0 z-30">
     <nav>
@@ -24,7 +27,7 @@ import NavItemContent from '../components/NavItemContent.astro'
                 </div>
                 <div class="flex gap-x-5 font-inter">
                     <div class="flex gap-x-5 max-lg:hidden">
-                        <button class="flex items-center gap-x-2 font-bold text-sm"><i class='bx bx-globe text-xl' ></i>EN</button>
+                        <button class="flex items-center gap-x-2 font-bold text-sm"><i class='bx bx-globe text-xl' ></i>{lang}</button>
                         <button><i class='bx bx-sun text-2xl'></i></button>
                     </div>
                     <div class="flex gap-x-3 max-md:hidden">
