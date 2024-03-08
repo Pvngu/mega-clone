@@ -1,7 +1,7 @@
 ---
 import ButtonPrimary from '../components/ButtonPrimary.astro'
 import ButtonSecondary from '../components/ButtonSecondary.astro'
-import NavButton from '../components/NavButton.astro'
+import DropdownButton from '../components/DropdownButton.astro'
 import NavContainer from '../components/NavContainer.astro'
 
 const products = [
@@ -98,21 +98,21 @@ const help = [
     }
 ]
 ---
-<header class="text-main fixed w-full bg-night top-0">
+<header class="text-main fixed w-full bg-night top-0 z-30">
     <nav>
         <!-- upper -->
         <div id="upper" class="border-b-[1px] border-gray-150">
             <div class="flex justify-between h-[68px] items-center px-6 xl:px-11 max-w-[1320px] m-auto">
                 <div class="flex items-center gap-x-16 h-full upperItems">
-                    <div class="size-8">
+                    <a class="size-8" href="/">
                         <img class="object-cover size-full" src="https://mega.io/wp-content/themes/megapages/megalib/images/megaicon.svg" alt="mega icon">
-                    </div>
+                    </a>
                     <div class="flex items-center font-inter font-bold gap-x-8 max-lg:hidden h-full">
-                        <NavButton idName='productsBtn'>Products</NavButton>
-                        <NavButton idName='solutionsBtn'>Solutions</NavButton>
+                        <DropdownButton idName='productsBtn'>Products</DropdownButton>
+                        <DropdownButton idName='solutionsBtn'>Solutions</DropdownButton>
                         <div class="hover:border-b-2 border-red-500">Business</div>
                         <div class="hover:border-b-2 border-red-500">Pricing</div>
-                        <NavButton idName='helpBtn'>Help</NavButton>
+                        <DropdownButton idName='helpBtn'>Help</DropdownButton>
                     </div>
                 </div>
                 <div class="flex gap-x-5 font-inter">
@@ -192,18 +192,20 @@ const help = [
         </dialog>
     </nav>
 </header>
+<div id="overlayHeader" class="h-full w-full fixed z-20 bg-[#04101E] opacity-70 hidden"></div>
 
 <script>
 const dialog = document.querySelector('#lower') as HTMLDialogElement;
 const items = document.querySelectorAll('.navItems') as NodeListOf<HTMLInputElement>;
 const btns = document.querySelectorAll('.navBtns') as NodeListOf<HTMLInputElement>;
+const overlay = document.getElementById('overlayHeader') as HTMLElement;
 
 btns.forEach((btn, i) => {
     btn.addEventListener('change', () => {
         if(btn.checked) {
             items[i].classList.remove('hidden');
+            overlay.classList.remove('hidden')
             dialog.show();
-            
             btns.forEach((otherBtn, j) => {
                 if (j !== i) {
                     otherBtn.checked = false;
@@ -213,6 +215,7 @@ btns.forEach((btn, i) => {
         }
         else {
             btn.classList.remove('active');
+            overlay.classList.add('hidden');
             items[i].classList.add('hidden');
             dialog.close();
         }
