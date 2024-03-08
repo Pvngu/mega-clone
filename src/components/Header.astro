@@ -194,21 +194,28 @@ const help = [
 </header>
 
 <script>
-    const dialog = document.querySelector('#lower') as HTMLDialogElement;
-    const items = document.querySelectorAll('.navItems') as NodeListOf<HTMLInputElement>;
-    const btns = document.querySelectorAll('.navBtns') as NodeListOf<HTMLInputElement>;
+const dialog = document.querySelector('#lower') as HTMLDialogElement;
+const items = document.querySelectorAll('.navItems') as NodeListOf<HTMLInputElement>;
+const btns = document.querySelectorAll('.navBtns') as NodeListOf<HTMLInputElement>;
 
-    btns.forEach((btn, i) => {
-        btn.addEventListener('change', () => {
-            if(btn.checked) {
-                items[i].classList.remove('hidden');
-                dialog.show();
-            }
-            else {
-                btn.classList.remove('active');
-                items[i].classList.add('hidden');
-                dialog.close();
-            }
-        })
-    })
+btns.forEach((btn, i) => {
+    btn.addEventListener('change', () => {
+        if(btn.checked) {
+            items[i].classList.remove('hidden');
+            dialog.show();
+            
+            btns.forEach((otherBtn, j) => {
+                if (j !== i) {
+                    otherBtn.checked = false;
+                    items[j].classList.add('hidden');
+                }
+            });
+        }
+        else {
+            btn.classList.remove('active');
+            items[i].classList.add('hidden');
+            dialog.close();
+        }
+    });
+});
 </script>
