@@ -4,12 +4,15 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'night': '#1a1f26',
-				'main': '#ffffff',
-				'gray-150': '#30353b',
-				'gray-secondary': '#999999',
-				'mega-red': '#ce3f2d',
-				'gray-primary': '#E5E5E5'
+				'night': 'var(--bg-color)',
+				'main': 'var(--color-main)',
+				'gray-border': 'var(--color-gray-border)',
+				'gray-primary': 'var(--color-gray-primary)',
+				'gray-secondary': 'var(--color-gray-secondary)',
+				'mega-red': 'var(--color-mega-red)',
+				'bg-2': "var(--bg-color-2)",
+				'banner': "var(--bg-banner)",
+				'counter': "var(--color-counter)"
 			},
 			fontFamily: {
 				'poppins': ['Poppins', 'arial', 'sans-serif'],
@@ -18,4 +21,5 @@ export default {
 		},
 	},
 	plugins: [],
+	darkMode: "class",
 }

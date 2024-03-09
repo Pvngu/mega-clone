@@ -27,3 +27,34 @@ const { title } = Astro.props
 		<slot />
 	</body>
 </html>
+
+<style is:global>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+	@layer base {
+		:root {
+			--bg-color:#ffffff;
+			--color-main: #03111e;
+			--color-gray-primary: #03111e;
+			--color-gray-secondary: #6e6e6e;
+			--color-gray-border: #EDEDEE;
+			--color-mega-red: #dd1405;
+			--bg-color-2: #f9f9fb;
+			--bg-banner: #464b4f;
+			--color-counter: #00174C;
+		}
+
+		.dark {
+			--bg-color:#1a1f26;
+			--color-main: #ffffff;
+			--color-gray-primary: #E5E5E5;
+			--color-gray-secondary: #999999;
+			--color-gray-border: #30353b;
+			--color-mega-red: #ce3f2d;
+			--bg-color-2: #1f242a;
+			--bg-banner: #d7d8d9;
+			--color-counter: #03111e;
+		}
+	}
+</style>

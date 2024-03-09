@@ -5,13 +5,14 @@ import ButtonPrimary from '../components/ButtonPrimary.astro'
 import ButtonSecondary from '../components/ButtonSecondary.astro'
 import DropdownButton from '../components/DropdownButton.astro'
 import NavItemContent from '../components/NavItemContent.astro'
+import ToggleTheme from '../components/ToggleTheme.astro'
 
 const lang = getLangFromUrl(Astro.url);
 ---
 <header class="text-main fixed w-full bg-night top-0 z-30">
     <nav>
         <!-- upper -->
-        <div id="upper" class="border-b-[1px] border-gray-150">
+        <div id="upper" class="border-b-[1px] border-gray-border">
             <div class="flex justify-between h-[68px] items-center px-6 xl:px-11 max-w-[1320px] m-auto">
                 <div class="flex items-center gap-x-16 h-full upperItems">
                     <a class="size-8" href="/">
@@ -27,8 +28,10 @@ const lang = getLangFromUrl(Astro.url);
                 </div>
                 <div class="flex gap-x-5 font-inter">
                     <div class="flex gap-x-5 max-lg:hidden">
-                        <button class="flex items-center gap-x-2 font-bold text-sm uppercase"><i class='bx bx-globe text-xl' ></i>{lang}</button>
-                        <button><i class='bx bx-sun text-2xl'></i></button>
+                        <button class="flex items-center gap-x-2 font-bold text-sm uppercase">
+                            <i class='bx bx-globe text-xl' ></i>{lang}
+                        </button>
+                        <ToggleTheme />
                     </div>
                     <div class="flex gap-x-3 max-md:hidden">
                         <a href="/login">
@@ -45,7 +48,7 @@ const lang = getLangFromUrl(Astro.url);
             </div>
         </div>
         <!-- lower -->
-        <dialog id="lower" class="bg-[#1f242a] w-full">
+        <dialog id="lower" class="bg-bg-2 w-full">
             <div class="max-w-[1320px] m-auto px-6 xl:px-11 pt-14 pb-[4.1rem]">
                 <div class="hidden navItems">
                     <!-- Heading -->
