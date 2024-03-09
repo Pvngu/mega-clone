@@ -8,6 +8,7 @@ import NavItemContent from '../components/NavItemContent.astro'
 import ToggleTheme from '../components/ToggleTheme.astro'
 
 const lang = getLangFromUrl(Astro.url);
+console.log(lang);
 ---
 <header class="text-main fixed w-full bg-night top-0 z-30">
     <nav>
@@ -18,11 +19,11 @@ const lang = getLangFromUrl(Astro.url);
                     <a class="size-8" href="/">
                         <img class="object-cover size-full" src="https://mega.io/wp-content/themes/megapages/megalib/images/megaicon.svg" alt="mega icon">
                     </a>
-                    <div class="flex items-center font-inter font-bold gap-x-8 max-lg:hidden h-full">
+                    <div class="flex items-center font-inter font-bold gap-x-9 max-lg:hidden h-full">
                         <DropdownButton idName='productsBtn'>{t("HEADER.PRODUCTS")}</DropdownButton>
                         <DropdownButton idName='solutionsBtn'>{t("HEADER.SOLUTIONS")}</DropdownButton>
-                        <div class="hover:border-b-2 border-red-500">{t("HEADER.BUSINESS")}</div>
-                        <div class="hover:border-b-2 border-red-500">{t("HEADER.PRICING")}</div>
+                        <div class="flex items-center px-2 border-y-4 border-transparent hover:border-b-red-500 h-full cursor-pointer">{t("HEADER.BUSINESS")}</div>
+                        <div class="flex items-center px-2 border-y-4 border-transparent hover:border-b-red-500 h-full cursor-pointer">{t("HEADER.PRICING")}</div>
                         <DropdownButton idName='helpBtn'>{t("HEADER.HELP")}</DropdownButton>
                     </div>
                 </div>
@@ -164,17 +165,20 @@ const dialog = document.querySelector('#lower') as HTMLDialogElement;
 const items = document.querySelectorAll('.navItems') as NodeListOf<HTMLInputElement>;
 const btns = document.querySelectorAll('.navBtns') as NodeListOf<HTMLInputElement>;
 const overlay = document.getElementById('overlayHeader') as HTMLElement;
+const chkDiv = document.querySelectorAll('.chkParent');
 
 btns.forEach((btn, i) => {
     btn.addEventListener('change', () => {
         if(btn.checked) {
             items[i].classList.remove('hidden');
-            overlay.classList.remove('hidden')
+            overlay.classList.remove('hidden');
+            chkDiv[i].classList.add('border-b-red-500');
             dialog.show();
             btns.forEach((otherBtn, j) => {
                 if (j !== i) {
                     otherBtn.checked = false;
                     items[j].classList.add('hidden');
+                    chkDiv[j].classList.remove('border-b-red-500');
                 }
             });
         }
@@ -182,6 +186,7 @@ btns.forEach((btn, i) => {
             btn.classList.remove('active');
             overlay.classList.add('hidden');
             items[i].classList.add('hidden');
+            chkDiv[i].classList.remove('border-b-red-500');
             dialog.close();
         }
     });
