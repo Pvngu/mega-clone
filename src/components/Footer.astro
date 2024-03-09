@@ -1,3 +1,243 @@
-<footer class="max-w-[1320px] m-auto">
-
+---
+import { t } from 'i18next';
+import LinkButton from '../components/LinkButton.astro'
+---
+<footer class="max-w-[1320px] m-auto px-6 xl:px-11">
+    <div class="flex gap-x-28 mb-20">
+        <!----------------- left ----------------->
+        <div class="flex flex-col gap-y-12">
+            <div class="flex flex-col gap-y-5 text-inter font-inter">
+                <a class="w-fit h-12 px-2" href="/">
+                    <img class="size-full" src="https://mega.io/wp-content/themes/megapages/megalib/images/logo-hz-transparent-light.svg" alt="mega logo">
+                </a>
+                <span class="text-main font-semibold">The Privacy Company</span>
+                <div class="flex flex-col gap-y-2 text-gray-secondary text-sm">
+                    <span>User-encrypted cloud services</span>
+                    <span>© MEGA 2024 All rights reserved</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-y-5">
+                <span class="font-inter font-semibold text-main text-sm">Follow MEGA</span>
+                <div class="flex gap-x-5">
+                    <LinkButton url='https://www.facebook.com/'>
+                        <i class='bx bxl-facebook-circle'></i>
+                    </LinkButton>
+                    <LinkButton url='https://www.facebook.com/'>
+                        <i class='bx bxl-instagram' ></i>
+                    </LinkButton>
+                    <LinkButton url='https://www.facebook.com/'>
+                        <i class='bx bxl-twitter'></i>
+                    </LinkButton>
+                    <LinkButton url='https://www.facebook.com/'>
+                        <i class='bx bxl-linkedin-square' ></i>
+                    </LinkButton>
+                    <LinkButton url='https://www.facebook.com/'>
+                        <i class='bx bxl-youtube' ></i>
+                    </LinkButton>
+                    <LinkButton url='https://www.facebook.com/'>
+                        <i class='bx bx-rfid' ></i>
+                    </LinkButton>
+                </div>
+            </div>
+        </div>
+        <!----------------- right ----------------->
+        <nav class="flex justify-between w-full">
+            <!----------------- List: 1 ----------------->
+            <div class="flex flex-col gap-y-6">
+                <!----------------- Top list ----------------->
+                <div class="flex flex-col gap-y-3">
+                    <div class="text-main font-inter font-semibold">
+                        <span>{t("HEADER.PRODUCTS")}</span>
+                    </div>
+                    <div class="flex flex-col gap-y-3 text-sm text-gray-secondary">
+                        <a href="/storage">
+                            <span>{t("HEADER.PRODUCTS_CONTENT_TITLE_1")}</span>
+                        </a>
+                        <a href="/chatandmeetings">
+                            <span>{t("HEADER.PRODUCTS_CONTENT_TITLE_2")}</span>
+                        </a>
+                        <a href="/sync">
+                            <span>{t("HEADER.PRODUCTS_CONTENT_TITLE_3")}</span>
+                        </a>
+                        <a href="/megabackup">
+                            <span>{t("HEADER.PRODUCTS_CONTENT_TITLE_4")}</span>
+                        </a>
+                        <a href="/share">
+                            <span>{t("HEADER.PRODUCTS_CONTENT_TITLE_5")}</span>
+                        </a>
+                        <a href="/media-files">
+                            <span>{t("HEADER.PRODUCTS_CONTENT_TITLE_6")}</span>
+                        </a>
+                        <a href="/objectstorage">
+                            <span>{t("HEADER.PRODUCTS_CONTENT_TITLE_7")}</span>
+                        </a>
+                        <a href="/vpn">
+                            <span>{t("HEADER.PRODUCTS_CONTENT_TITLE_8")}</span>
+                        </a>
+                    </div>
+                </div>
+                <!----------------- Bottom list ----------------->
+                <div class="flex flex-col gap-y-3">
+                    <div class="text-main font-inter font-semibold">
+                        <span>{t("HEADER.SOLUTIONS")}</span>
+                    </div>
+                    <div class="flex flex-col gap-y-3 text-sm text-gray-secondary">
+                        <a href="/individuals">
+                            <span>{t("HEADER.SOLUTIONS_CONTENT_TITLE_1")}</span>
+                        </a>
+                        <a href="freelancers">
+                            <span>{t("HEADER.SOLUTIONS_CONTENT_TITLE_2")}</span>
+                        </a>
+                        <a href="small-business">
+                            <span>{t("HEADER.SOLUTIONS_CONTENT_TITLE_3")}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- List: 2 -->
+             <div class="flex flex-col gap-y-6">
+                <!-- Top list -->
+                <div class="flex flex-col gap-y-3">
+                    <div class="text-main font-inter font-semibold">
+                        <span>Platform</span>
+                    </div>
+                    <div class="flex flex-col gap-y-3 text-sm text-gray-secondary">
+                        <a href="/storage">
+                            <span>Mobile apps</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Desktop app</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Browser extensions</span>
+                        </a>
+                        <a href="/storage">
+                            <span>MEGA CMD</span>
+                        </a>
+                        <a href="/storage">
+                            <span>CMD for NAS</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Bottom list -->
+                <div class="flex flex-col gap-y-3">
+                    <div class="text-main font-inter font-semibold">
+                        <span>Plans</span>
+                    </div>
+                    <div class="flex flex-col gap-y-3 text-sm text-gray-secondary">
+                        <a href="/individuals">
+                            <span>Pricing</span>
+                        </a>
+                        <a href="freelancers">
+                            <span>Achievements</span>
+                        </a>
+                        <a href="small-business">
+                            <span>Referral programme</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- List: 3 -->
+             <div class="flex flex-col gap-y-6">
+                <!-- Top list -->
+                <div class="flex flex-col gap-y-3">
+                    <div class="text-main font-inter font-semibold">
+                        <span>Resourcers</span>
+                    </div>
+                    <div class="flex flex-col gap-y-3 text-sm text-gray-secondary">
+                        <a href="/storage">
+                            <span>Blog</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Security and privacy</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Reliability</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Developers</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Resellers</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Bottom list -->
+                <div class="flex flex-col gap-y-3">
+                    <div class="text-main font-inter font-semibold">
+                        <span>Help</span>
+                    </div>
+                    <div class="flex flex-col gap-y-3 text-sm text-gray-secondary">
+                        <a href="/storage">
+                            <span>Help Centre</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Contact us</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Vulnerability reward programme</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Support</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- List: 4 -->
+             <div class="flex flex-col gap-y-6">
+                <!-- Top list -->
+                <div class="flex flex-col gap-y-3">
+                    <div class="text-main font-inter font-semibold">
+                        <span>Company</span>
+                    </div>
+                    <div class="flex flex-col gap-y-3 text-sm text-gray-secondary">
+                        <a href="/storage">
+                            <span>About us</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Careers</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Media</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Bottom list -->
+                <div class="flex flex-col gap-y-3">
+                    <div class="text-main font-inter font-semibold">
+                        <span>Legal</span>
+                    </div>
+                    <div class="flex flex-col gap-y-3 text-sm text-gray-secondary">
+                        <a href="/storage">
+                            <span>Terms of Service</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Additional VPM Terms of Service</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Privacy Policy</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Copyright</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Takedown Guidance Policy</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Transparency Report</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Cookie policy</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Cookie Settings</span>
+                        </a>
+                        <a href="/storage">
+                            <span>Copyright Dispute</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
 </footer>
