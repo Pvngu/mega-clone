@@ -13,7 +13,7 @@ const lang = getLangFromUrl(Astro.url);
     <nav>
         <!-- upper -->
         <div id="upper" class="border-b-[1px] border-gray-border">
-            <div class="flex justify-between h-[68px] items-center px-6 xl:px-11 max-w-[1320px] m-auto">
+            <div class="flex justify-between h-[68px] items-center px-6 xl:px-10 max-w-[1320px] m-auto">
                 <div class="flex items-center gap-x-16 h-full upperItems">
                     <a class="size-8" href="/">
                         <img class="object-cover size-full" src="https://mega.io/wp-content/themes/megapages/megalib/images/megaicon.svg" alt="mega icon">
@@ -178,6 +178,7 @@ btns.forEach((btn, i) => {
                     otherBtn.checked = false;
                     items[j].classList.add('hidden');
                     chkDiv[j].classList.remove('border-b-red-500');
+                    document.documentElement.classList.add('overflow-hidden');
                 }
             });
         }
@@ -185,6 +186,7 @@ btns.forEach((btn, i) => {
             overlay.classList.add('hidden');
             items[i].classList.add('hidden');
             chkDiv[i].classList.remove('border-b-red-500');
+            document.documentElement.classList.remove('overflow-hidden');
             dialog.close();
         }
     });
@@ -196,6 +198,7 @@ overlay.addEventListener("click", () => {
         overlay.classList.add('hidden');
         items[i].classList.add('hidden');
         chkDiv[i].classList.remove('border-b-red-500');
+        document.documentElement.classList.remove('overflow-hidden');
     })
     dialog.close();
 })
