@@ -73,11 +73,15 @@ const { title } = Astro.props
 	  }
 	  return "light";
 	})();
-  
+	
+	const logo = document.querySelector('.footerLogo');
+
 	if (theme === "light") {
 	  document.documentElement.classList.remove("dark");
+	  logo.classList.remove("dark")
 	} else {
 	  document.documentElement.classList.add("dark");
+	  logo.classList.add("dark")
 	}
 	window.localStorage.setItem("theme", theme);
   </script>

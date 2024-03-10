@@ -2,19 +2,22 @@ import React, { useState, useEffect } from 'react'
 
 function ToggleTheme() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
-
-  useEffect(() => {
-
-  });
+  const logo = document.querySelector(".footerLogo");
 
   const handleClick = () => {
     setTheme(theme === "light" ? "dark" : "light");
   }
 
   useEffect(() => {
-    if(theme === "dark") document.documentElement.classList.add("dark")
-    else document.documentElement.classList.remove("dark");
-  localStorage.setItem("theme", theme);
+    if(theme === "dark") {
+      document.documentElement.classList.add("dark")
+      logo.classList.add('dark');
+    }
+    else {
+      document.documentElement.classList.remove("dark");
+      logo.classList.remove('dark');
+    } 
+    localStorage.setItem("theme", theme);
   },[theme])
 
   return (

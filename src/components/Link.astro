@@ -6,8 +6,8 @@ interface Props {
 const { url } = Astro.props;
 ---
 <a href={url}>
-    <div class="group flex items-center gap-x-3 text-main text-inter font-semibold hover:opacity-60 transition-all">
+    <div class="group flex items-center gap-x-3 text-main text-inter font-semibold transition-all">
             <div class="underline"> <slot /> </div>
-            <i class='bx bx-right-arrow-alt text-3xl group-hover:translate-x-1 duration-[400ms] ease-in-out'></i>
+            <i class='bx bx-right-arrow-alt text-3xl group-hover:opacity-85 group-hover:translate-x-1 duration-[400ms] ease-in-out'></i>
     </div>
 </a>

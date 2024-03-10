@@ -7,8 +7,7 @@ import LinkButton from '../components/LinkButton.astro'
         <!----------------- left ----------------->
         <div class="flex flex-col gap-y-12">
             <div class="flex flex-col gap-y-5 text-inter font-inter">
-                <a class="w-fit h-12 px-2" href="/">
-                    <img class="size-full" src="https://mega.io/wp-content/themes/megapages/megalib/images/logo-hz-transparent-light.svg" alt="mega logo">
+                <a class="block w-[144px] h-[48px] px-2 footerLogo" href="/">
                 </a>
                 <span class="text-main font-semibold">The Privacy Company</span>
                 <div class="flex flex-col gap-y-2 text-gray-secondary text-sm">
@@ -245,3 +244,15 @@ import LinkButton from '../components/LinkButton.astro'
         </nav>
     </div>
 </footer>
+
+<style>
+    .footerLogo {
+        background-image: url("https://mega.io/wp-content/themes/megapages/megalib/images/logo-hz-transparent-light.svg");
+        background-size: cover;
+    }
+
+    .footerLogo.dark{
+        background-image: url("https://mega.io/wp-content/themes/megapages/megalib/images/logo-hz-transparent-dark.svg");
+        background-size: cover;
+    }
+</style>
