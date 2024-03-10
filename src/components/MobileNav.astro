@@ -214,4 +214,12 @@ import ButtonSecondary from '../components/ButtonSecondary.astro'
             dialog.close();
         }
     })
+
+    window.addEventListener('resize', () => {
+        if(window.matchMedia('(min-width: 1024px)').matches) {
+            btn.checked = false;
+            const event = new Event('change');
+            btn.dispatchEvent(event);
+        }
+    })
 </script>
