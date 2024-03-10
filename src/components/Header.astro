@@ -5,10 +5,9 @@ import ButtonPrimary from '../components/ButtonPrimary.astro'
 import ButtonSecondary from '../components/ButtonSecondary.astro'
 import DropdownButton from '../components/DropdownButton.astro'
 import NavItemContent from '../components/NavItemContent.astro'
-import ToggleTheme from '../components/ToggleTheme.astro'
+import ToggleTheme from '../components/ToggleTheme.jsx'
 
 const lang = getLangFromUrl(Astro.url);
-console.log(lang);
 ---
 <header class="text-main fixed w-full bg-night top-0 z-30">
     <nav>
@@ -32,7 +31,7 @@ console.log(lang);
                         <button class="flex items-center gap-x-2 font-bold text-sm uppercase">
                             <i class='bx bx-globe text-xl' ></i>{lang}
                         </button>
-                        <ToggleTheme />
+                        <ToggleTheme client:only />
                     </div>
                     <div class="flex gap-x-3 max-md:hidden">
                         <a href="/login">
