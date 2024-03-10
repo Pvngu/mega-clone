@@ -199,7 +199,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro'
     btn.addEventListener("change", () => {
         if(btn.checked) {
             document.documentElement.classList.add('overflow-hidden');
-            header.classList.remove("fixed")
+            header.classList.add("h-full")
             upper.classList.remove('border-b-[1px]')
             hamburger.classList.add('hidden');
             x.classList.remove('hidden');
@@ -208,7 +208,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro'
         else {
             document.documentElement.classList.remove('overflow-hidden');
             upper.classList.add('border-b-[1px]')
-            header.classList.add("fixed")
+            header.classList.remove("h-full")
             x.classList.add('hidden')
             hamburger.classList.remove('hidden');
             dialog.close();
