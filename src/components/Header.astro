@@ -182,7 +182,6 @@ btns.forEach((btn, i) => {
             });
         }
         else {
-            btn.classList.remove('active');
             overlay.classList.add('hidden');
             items[i].classList.add('hidden');
             chkDiv[i].classList.remove('border-b-red-500');
@@ -190,4 +189,14 @@ btns.forEach((btn, i) => {
         }
     });
 });
+
+overlay.addEventListener("click", () => {
+    btns.forEach((btn, i) => {
+        btn.checked = false;
+        overlay.classList.add('hidden');
+        items[i].classList.add('hidden');
+        chkDiv[i].classList.remove('border-b-red-500');
+    })
+    dialog.close();
+})
 </script>
