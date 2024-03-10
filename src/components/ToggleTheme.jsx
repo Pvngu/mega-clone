@@ -18,8 +18,9 @@ function ToggleTheme() {
   },[theme])
 
   return (
-    <button onClick={handleClick}>
+    <button className='max-lg:flex max-lg:items-center max-lg:gap-x-3' onClick={handleClick}>
         <i className={`bx bx-${theme === 'light' ? 'moon' : 'sun'} text-2xl`}></i>
+        <span className='lg:hidden'>Switch to light mode</span>
     </button>
   )
 }

@@ -1,0 +1,209 @@
+---
+import { t } from 'i18next';
+import NavItemContent from '../components/NavItemContent.astro'
+import ToggleTheme from '../components/ToggleTheme.jsx'
+import ButtonPrimary from '../components/ButtonPrimary.astro'
+import ButtonSecondary from '../components/ButtonSecondary.astro'
+---
+<dialog id="mobileNav" class="w-full mt-[68px] h-svh bg-night z-30 lg:hidden">
+    <div class="px-6 h-full pt-6 overflow-y-scroll">
+        <!-- top items -->
+        <div>
+            <nav>
+                <details class="border-b-[1px] border-gray-border cursor-pointer" name="nav">
+                    <summary class="text-main font-inter font-bold py-2 flex justify-between list-none">
+                        <span class="py-1">{t("HEADER.PRODUCTS")}</span>
+                        <div>
+                            <i class='bx bx-chevron-down text-2xl'></i>
+                        </div>
+                    </summary>
+                    <div class="py-7">
+                        <div class="uppercase font-inter font-bold text-xs text-gray-secondary tracking-widest mb-4">{t("HEADER.PRODUCTS")}</div>
+                        <div class="flex flex-col gap-y-6">
+                            <NavItemContent 
+                                name={t("HEADER.PRODUCTS_CONTENT_TITLE_1")} 
+                                description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_1")} 
+                                icon="cloud"
+                                url="/storage"
+                            />
+                            <NavItemContent 
+                                name={t("HEADER.PRODUCTS_CONTENT_TITLE_2")} 
+                                description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_2")} 
+                                icon="chat"
+                                url="/chatandmettings"
+                            />
+                            <NavItemContent 
+                                name={t("HEADER.PRODUCTS_CONTENT_TITLE_3")} 
+                                description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_3")} 
+                                icon="sync"
+                                url="/syncing"
+                            />
+                            <NavItemContent 
+                                name={t("HEADER.PRODUCTS_CONTENT_TITLE_4")} 
+                                description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_4")} 
+                                icon="server"
+                                url="/megabackup"
+                            />
+                            <NavItemContent 
+                                name={t("HEADER.PRODUCTS_CONTENT_TITLE_5")} 
+                                description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_5")} 
+                                icon="share"
+                                url="/share"
+                            />
+                            <NavItemContent 
+                                name={t("HEADER.PRODUCTS_CONTENT_TITLE_6")} 
+                                description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_6")} 
+                                icon="image"
+                                url="/media-files"
+                            />
+                            <NavItemContent 
+                                name={t("HEADER.PRODUCTS_CONTENT_TITLE_7")} 
+                                description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_7")} 
+                                icon="data"
+                                url="/objectstorage"
+                            />
+                            <NavItemContent 
+                                name={t("HEADER.PRODUCTS_CONTENT_TITLE_8")} 
+                                description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_8")} 
+                                icon="shield"
+                                url="/vpn"
+                            />
+                        </div>
+                    </div>
+                </details>
+                <details class="border-b-[1px] border-gray-border cursor-pointer" name="nav">
+                    <summary class="text-main font-inter font-bold py-2 flex justify-between list-none">
+                        <span class="py-1">{t("HEADER.SOLUTIONS")}</span>
+                        <div>
+                            <i class='bx bx-chevron-down text-2xl'></i>
+                        </div>
+                    </summary>
+                    <div class="py-7">
+                        <div class="uppercase font-inter font-bold text-xs text-gray-secondary tracking-widest mb-4">{t("HEADER.SOLUTIONS")}</div>
+                        <div class="flex flex-col gap-y-6 detailsContent">
+                            <NavItemContent 
+                                name={t('HEADER.SOLUTIONS_CONTENT_TITLE_1')} 
+                                description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_1')} 
+                                icon="smile"
+                                url="/individuals"
+                            />
+                            <NavItemContent 
+                                name={t('HEADER.SOLUTIONS_CONTENT_TITLE_2')} 
+                                description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_2')} 
+                                icon="video"
+                                url="/freelancers"
+                            />
+                            <NavItemContent 
+                                name={t('HEADER.SOLUTIONS_CONTENT_TITLE_3')} 
+                                description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_3')} 
+                                icon="group"
+                                url="/small-business"
+                            />
+                        </div>
+                    </div>
+                </details>
+                 <div class="border-b-[1px] border-gray-border text-main font-inter font-bold py-3 h-[50px] cursor-pointer">
+                    {t("HEADER.BUSINESS")}
+                </div>
+                <div class="border-b-[1px] border-gray-border text-main font-inter font-bold py-3 h-[50px] cursor-pointer">
+                    {t("HEADER.PRICING")}
+                </div>
+                <details class="border-b-[1px] border-gray-border cursor-pointer" name="nav">
+                    <summary class="text-main font-inter font-bold py-2 flex justify-between list-none">
+                        <span class="py-1">{t("HEADER.HELP")}</span>
+                        <div>
+                            <i class='bx bx-chevron-down text-2xl'></i>
+                        </div>
+                    </summary>
+                    <div class="py-7">
+                        <div class="flex flex-col gap-y-6 detailsContent">
+                            <NavItemContent 
+                                name={t('HEADER.HELP_CONTENT_TITLE_1')} 
+                                description={t('HEADER.HELP_CONTENT_DESCRIPTION_1')} 
+                                icon="smile"
+                                url="/individuals"
+                            />
+                            <NavItemContent 
+                                name={t('HEADER.HELP_CONTENT_TITLE_2')} 
+                                description={t('HEADER.HELP_CONTENT_DESCRIPTION_2')} 
+                                icon="video"
+                                url="/freelancers"
+                            />
+                            <NavItemContent 
+                                name={t('HEADER.HELP_CONTENT_TITLE_3')} 
+                                description={t('HEADER.HELP_CONTENT_DESCRIPTION_3')} 
+                                icon="group"
+                                url="/small-business"
+                            />
+                        </div>
+                    </div>
+                </details>
+            </nav>
+            <div class="text-main text-sm mt-6 font-inter font-semibold">
+                <ToggleTheme client:only />
+            </div>
+        </div>
+    </div>
+    <!-- bottom items -->
+    <div class="flex gap-x-4 fixed bottom-0 w-full md:hidden bg-night px-6 py-3 border-t-[1px] border-gray-border">
+        <ButtonSecondary className='w-full'>Log In</ButtonSecondary>
+        <ButtonPrimary className='w-full'>Sign up</ButtonPrimary>
+    </div>
+</dialog>
+
+<style>
+    details {
+        transition: height 200ms ease;
+        overflow: hidden;
+    }
+    
+    details[open] summary span{
+        border-bottom: solid 2px var(--color-mega-red);
+    }
+
+    details[open] summary div i, details summary div i{
+        transition: rotate 0.4s ease;
+    }
+
+    details[open] summary div i {
+        rotate: 180deg;
+    }
+
+    details:not([open]) {
+        height: 50px;
+    }
+
+    details[open]:nth-of-type(1) {
+        height: 670px;
+    }
+
+    details[open]:nth-of-type(2) {
+        height: 350px;
+    }
+
+    details[open]:nth-of-type(3) {
+        height: 295px;
+    }
+</style>
+
+<script>
+    const btn = document.getElementById('mobileNavBtn') as HTMLInputElement;
+    const dialog = document.getElementById("mobileNav") as HTMLDialogElement;
+    const hamburger = document.getElementById("mobileHam") as HTMLElement;
+    const x = document.getElementById("mobileX") as HTMLElement;
+
+    btn.addEventListener("change", () => {
+        if(btn.checked) {
+            document.documentElement.classList.add('overflow-hidden');
+            hamburger.classList.add('hidden');
+            x.classList.remove('hidden');
+            dialog.show();
+        }
+        else {
+            document.documentElement.classList.remove('overflow-hidden');
+            x.classList.add('hidden')
+            hamburger.classList.remove('hidden');
+            dialog.close();
+        }
+    })
+</script>

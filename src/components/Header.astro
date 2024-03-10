@@ -6,157 +6,161 @@ import ButtonSecondary from '../components/ButtonSecondary.astro'
 import DropdownButton from '../components/DropdownButton.astro'
 import NavItemContent from '../components/NavItemContent.astro'
 import ToggleTheme from '../components/ToggleTheme.jsx'
+import MobileNav from '../components/MobileNav.astro'
 
 const lang = getLangFromUrl(Astro.url);
 ---
 <header class="text-main fixed w-full bg-night top-0 z-30">
-    <nav>
-        <!-- upper -->
-        <div id="upper" class="border-b-[1px] border-gray-border">
-            <div class="flex justify-between h-[68px] items-center px-6 xl:px-10 max-w-[1320px] m-auto">
-                <div class="flex items-center gap-x-16 h-full upperItems">
-                    <a class="size-8" href="/">
-                        <img class="object-cover size-full" src="https://mega.io/wp-content/themes/megapages/megalib/images/megaicon.svg" alt="mega icon">
-                    </a>
-                    <div class="flex items-center font-inter font-bold gap-x-9 max-lg:hidden h-full">
-                        <DropdownButton idName='productsBtn'>{t("HEADER.PRODUCTS")}</DropdownButton>
-                        <DropdownButton idName='solutionsBtn'>{t("HEADER.SOLUTIONS")}</DropdownButton>
-                        <div class="flex items-center px-2 border-y-4 border-transparent hover:border-b-red-500 h-full cursor-pointer">{t("HEADER.BUSINESS")}</div>
-                        <div class="flex items-center px-2 border-y-4 border-transparent hover:border-b-red-500 h-full cursor-pointer">{t("HEADER.PRICING")}</div>
-                        <DropdownButton idName='helpBtn'>{t("HEADER.HELP")}</DropdownButton>
-                    </div>
+    <!-- upper -->
+    <div id="upper" class="border-b-[1px] border-gray-border">
+        <div class="flex justify-between h-[68px] items-center px-6 xl:px-10 max-w-[1320px] m-auto">
+            <div class="flex items-center gap-x-16 h-full upperItems">
+                <a class="size-8" href="/">
+                    <img class="object-cover size-full" src="https://mega.io/wp-content/themes/megapages/megalib/images/megaicon.svg" alt="mega icon">
+                </a>
+                <nav class="flex items-center font-inter font-bold gap-x-9 max-lg:hidden h-full">
+                    <DropdownButton idName='productsBtn'>{t("HEADER.PRODUCTS")}</DropdownButton>
+                    <DropdownButton idName='solutionsBtn'>{t("HEADER.SOLUTIONS")}</DropdownButton>
+                    <div class="flex items-center px-2 border-y-4 border-transparent hover:border-b-red-500 h-full cursor-pointer">{t("HEADER.BUSINESS")}</div>
+                    <div class="flex items-center px-2 border-y-4 border-transparent hover:border-b-red-500 h-full cursor-pointer">{t("HEADER.PRICING")}</div>
+                    <DropdownButton idName='helpBtn'>{t("HEADER.HELP")}</DropdownButton>
+                </nav>
+            </div>
+            <div class="flex gap-x-5 font-inter">
+                <div class="flex gap-x-5 max-lg:hidden">
+                    <button class="flex items-center gap-x-2 font-bold text-sm uppercase">
+                        <i class='bx bx-globe text-xl' ></i>{lang}
+                    </button>
+                    <ToggleTheme client:only />
                 </div>
-                <div class="flex gap-x-5 font-inter">
-                    <div class="flex gap-x-5 max-lg:hidden">
-                        <button class="flex items-center gap-x-2 font-bold text-sm uppercase">
-                            <i class='bx bx-globe text-xl' ></i>{lang}
-                        </button>
-                        <ToggleTheme client:only />
-                    </div>
-                    <div class="flex gap-x-3 max-md:hidden">
-                        <a href="/login">
-                            <ButtonSecondary>Log in</ButtonSecondary>
-                        </a>
-                        <a href="/register">
-                            <ButtonPrimary>Sign up</ButtonPrimary>
-                        </a>
-                    </div>
-                    <div class="flex justify-center items-center lg:hidden">
-                        <i class='bx bx-menu text-2xl'></i>
+                <div class="flex gap-x-3 max-md:hidden">
+                    <a href="/login">
+                        <ButtonSecondary>Log in</ButtonSecondary>
+                    </a>
+                    <a href="/register">
+                        <ButtonPrimary>Sign up</ButtonPrimary>
+                    </a>
+                </div>
+                <div class="lg:hidden">
+                    <div class="relative">
+                        <input class="absolute size-full opacity-0 z-30 cursor-pointer" id="mobileNavBtn" type="checkbox">
+                        <i id="mobileHam" class='bx bx-menu text-2xl'></i>
+                        <i id="mobileX" class='bx bx-x text-3xl hidden'></i>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- lower -->
-        <dialog id="lower" class="bg-bg-2 w-full">
-            <div class="max-w-[1320px] m-auto px-6 xl:px-11 pt-14 pb-[4.1rem]">
-                <div class="hidden navItems">
-                    <!-- Heading -->
-                    <div class="uppercase font-inter font-bold text-xs text-gray-secondary tracking-widest mb-4">{t("HEADER.PRODUCTS")}</div>
-                    <!-- List -->
-                    <div class="flex gap-10 flex-wrap">
-                        <NavItemContent 
-                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_1")} 
-                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_1")} 
-                        icon="cloud"
-                        url="/storage"
-                    />
+    </div>
+    <!-- lower -->
+    <dialog id="lower" class="bg-bg-2 w-full max-lg:hidden">
+        <div class="max-w-[1320px] m-auto px-6 xl:px-11 pt-14 pb-[4.1rem]">
+            <div class="hidden navItems">
+                <!-- Heading -->
+                <div class="uppercase font-inter font-bold text-xs text-gray-secondary tracking-widest mb-4">{t("HEADER.PRODUCTS")}</div>
+                <!-- List -->
+                <div class="flex gap-10 flex-wrap">
                     <NavItemContent 
-                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_2")} 
-                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_2")} 
-                        icon="chat"
-                        url="/chatandmettings"
-                    />
-                    <NavItemContent 
-                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_3")} 
-                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_3")} 
-                        icon="sync"
-                        url="/syncing"
-                    />
-                    <NavItemContent 
-                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_4")} 
-                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_4")} 
-                        icon="server"
-                        url="/megabackup"
-                    />
-                    <NavItemContent 
-                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_5")} 
-                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_5")} 
-                        icon="share"
-                        url="/share"
-                    />
-                    <NavItemContent 
-                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_6")} 
-                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_6")} 
-                        icon="image"
-                        url="/media-files"
-                    />
-                    <NavItemContent 
-                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_7")} 
-                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_7")} 
-                        icon="data"
-                        url="/objectstorage"
-                    />
-                    <NavItemContent 
-                        name={t("HEADER.PRODUCTS_CONTENT_TITLE_8")} 
-                        description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_8")} 
-                        icon="shield"
-                        url="/vpn"
-                    />
-                    </div>
-                </div>
-                <div class="hidden navItems">
-                    <!-- Heading -->
-                    <div class="uppercase font-inter font-bold text-xs text-gray-secondary tracking-widest mb-4">{t("HEADER.SOLUTIONS")}</div>
-                    <!-- List -->
-                    <div class="flex gap-10 flex-wrap">
-                        <NavItemContent 
-                            name={t('HEADER.SOLUTIONS_CONTENT_TITLE_1')} 
-                            description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_1')} 
-                            icon="smile"
-                            url="/individuals"
-                        />
-                        <NavItemContent 
-                            name={t('HEADER.SOLUTIONS_CONTENT_TITLE_2')} 
-                            description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_2')} 
-                            icon="video"
-                            url="/freelancers"
-                        />
-                        <NavItemContent 
-                            name={t('HEADER.SOLUTIONS_CONTENT_TITLE_3')} 
-                            description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_3')} 
-                            icon="group"
-                            url="/small-business"
-                        />
-                    </div>
-                </div>
-                <div class="hidden navItems">
-                    <!-- List -->
-                    <div class="flex gap-10 flex-wrap">
-                        <NavItemContent 
-                            name={t('HEADER.HELP_CONTENT_TITLE_1')} 
-                            description={t('HEADER.HELP_CONTENT_DESCRIPTION_1')} 
-                            icon="help-circle"
-                            url="#"
-                        />
-                        <NavItemContent 
-                            name={t('HEADER.HELP_CONTENT_TITLE_2')} 
-                            description={t('HEADER.HELP_CONTENT_DESCRIPTION_2')} 
-                            icon="message"
-                            url="/contact"
-                        />
-                        <NavItemContent 
-                            name={t('HEADER.HELP_CONTENT_TITLE_3')} 
-                            description={t('HEADER.HELP_CONTENT_DESCRIPTION_3')} 
-                            icon="shield"
-                            url="/bug-bounty"
-                        />
-                    </div>
+                    name={t("HEADER.PRODUCTS_CONTENT_TITLE_1")} 
+                    description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_1")} 
+                    icon="cloud"
+                    url="/storage"
+                />
+                <NavItemContent 
+                    name={t("HEADER.PRODUCTS_CONTENT_TITLE_2")} 
+                    description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_2")} 
+                    icon="chat"
+                    url="/chatandmettings"
+                />
+                <NavItemContent 
+                    name={t("HEADER.PRODUCTS_CONTENT_TITLE_3")} 
+                    description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_3")} 
+                    icon="sync"
+                    url="/syncing"
+                />
+                <NavItemContent 
+                    name={t("HEADER.PRODUCTS_CONTENT_TITLE_4")} 
+                    description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_4")} 
+                    icon="server"
+                    url="/megabackup"
+                />
+                <NavItemContent 
+                    name={t("HEADER.PRODUCTS_CONTENT_TITLE_5")} 
+                    description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_5")} 
+                    icon="share"
+                    url="/share"
+                />
+                <NavItemContent 
+                    name={t("HEADER.PRODUCTS_CONTENT_TITLE_6")} 
+                    description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_6")} 
+                    icon="image"
+                    url="/media-files"
+                />
+                <NavItemContent 
+                    name={t("HEADER.PRODUCTS_CONTENT_TITLE_7")} 
+                    description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_7")} 
+                    icon="data"
+                    url="/objectstorage"
+                />
+                <NavItemContent 
+                    name={t("HEADER.PRODUCTS_CONTENT_TITLE_8")} 
+                    description={t("HEADER.PRODUCTS_CONTENT_DESCRIPTION_8")} 
+                    icon="shield"
+                    url="/vpn"
+                />
                 </div>
             </div>
-        </dialog>
-    </nav>
+            <div class="hidden navItems">
+                <!-- Heading -->
+                <div class="uppercase font-inter font-bold text-xs text-gray-secondary tracking-widest mb-4">{t("HEADER.SOLUTIONS")}</div>
+                <!-- List -->
+                <div class="flex gap-10 flex-wrap">
+                    <NavItemContent 
+                        name={t('HEADER.SOLUTIONS_CONTENT_TITLE_1')} 
+                        description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_1')} 
+                        icon="smile"
+                        url="/individuals"
+                    />
+                    <NavItemContent 
+                        name={t('HEADER.SOLUTIONS_CONTENT_TITLE_2')} 
+                        description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_2')} 
+                        icon="video"
+                        url="/freelancers"
+                    />
+                    <NavItemContent 
+                        name={t('HEADER.SOLUTIONS_CONTENT_TITLE_3')} 
+                        description={t('HEADER.SOLUTIONS_CONTENT_DESCRIPTION_3')} 
+                        icon="group"
+                        url="/small-business"
+                    />
+                </div>
+            </div>
+            <div class="hidden navItems">
+                <!-- List -->
+                <div class="flex gap-10 flex-wrap">
+                    <NavItemContent 
+                        name={t('HEADER.HELP_CONTENT_TITLE_1')} 
+                        description={t('HEADER.HELP_CONTENT_DESCRIPTION_1')} 
+                        icon="help-circle"
+                        url="#"
+                    />
+                    <NavItemContent 
+                        name={t('HEADER.HELP_CONTENT_TITLE_2')} 
+                        description={t('HEADER.HELP_CONTENT_DESCRIPTION_2')} 
+                        icon="message"
+                        url="/contact"
+                    />
+                    <NavItemContent 
+                        name={t('HEADER.HELP_CONTENT_TITLE_3')} 
+                        description={t('HEADER.HELP_CONTENT_DESCRIPTION_3')} 
+                        icon="shield"
+                        url="/bug-bounty"
+                    />
+                </div>
+            </div>
+        </div>
+    </dialog>
 </header>
+<MobileNav />
 <div id="overlayHeader" class="h-full w-full fixed z-20 bg-[#04101E] opacity-70 hidden"></div>
 
 <script>
