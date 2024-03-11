@@ -3,6 +3,7 @@ import i18next from 'i18next';
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ChooseLanguage from "../components/ChooseLanguage.astro";
+import { HeadHrefLangs } from "astro-i18next/components";
 
 interface Props {
 	title: string;
@@ -19,6 +20,7 @@ const { title } = Astro.props
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="https://mega.io/wp-content/themes/megapages/megalib/images/megaicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<HeadHrefLangs />
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
