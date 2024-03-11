@@ -91,5 +91,9 @@
         "BUTTON": "Sign up for free",
         "CONTENT_TITLE_1": "Registered users",
         "CONTENT_TITLE_2": "Uploaded files"
+    },
+    "LANGUAGE": {
+        "TITLE": "Choose language",
+        "BUTTON": "Save"
     }
 }

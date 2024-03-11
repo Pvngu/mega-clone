@@ -1,5 +1,4 @@
 ---
-import { getLangFromUrl } from '../i18n/utils';
 import { t } from 'i18next';
 import ButtonPrimary from '../components/ButtonPrimary.astro'
 import ButtonSecondary from '../components/ButtonSecondary.astro'
@@ -7,8 +6,7 @@ import DropdownButton from '../components/DropdownButton.astro'
 import NavItemContent from '../components/NavItemContent.astro'
 import ToggleTheme from '../components/ToggleTheme.jsx'
 import MobileNav from '../components/MobileNav.astro'
-
-const lang = getLangFromUrl(Astro.url);
+import Language from '../components/Language.astro'
 ---
 <header id="mainHeader" class="text-main fixed w-full bg-night top-0 left-0 z-30">
     <!-- upper -->
@@ -28,9 +26,7 @@ const lang = getLangFromUrl(Astro.url);
             </div>
             <div class="flex gap-x-5 font-inter">
                 <div class="flex gap-x-5 max-lg:hidden">
-                    <button class="flex items-center gap-x-2 font-bold text-sm uppercase">
-                        <i class='bx bx-globe text-xl' ></i>{lang}
-                    </button>
+                    <Language />
                     <ToggleTheme client:only />
                 </div>
                 <div class="flex gap-x-3 max-md:hidden">

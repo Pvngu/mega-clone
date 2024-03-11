@@ -1,0 +1,41 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+---
+<>
+    <button id="languageBtn" class="flex items-center gap-x-2 font-bold text-sm uppercase ">
+        <i class='bx bx-globe text-xl' ></i>{lang}
+    </button>
+</>
+
+<script>
+    const dialog = document.getElementById("languageDialog") as HTMLDialogElement;
+    const btn = document.getElementById("languageBtn") as HTMLElement;
+    const x = document.getElementById("languageX") as HTMLElement;
+
+    btn.addEventListener("click", () => {
+        dialog.showModal()
+        document.documentElement.classList.add("overflow-hidden");
+    })
+    x.addEventListener("click", () => {
+        dialog.close()
+        
+    })
+
+    dialog.addEventListener("close", () => {
+        document.documentElement.classList.remove("overflow-hidden")
+    })
+    
+    // close on  outside click
+    dialog.addEventListener("click", e => {
+    const dialogDimensions = dialog.getBoundingClientRect()
+    if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+    ) {
+        dialog.close()
+    }
+    })
+</script>

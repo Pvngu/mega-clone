@@ -91,5 +91,9 @@
         "BUTTON": "Regístrate gratis",
         "CONTENT_TITLE_1": "Usuarios registrados",
         "CONTENT_TITLE_2": "Archivos subidos"
+    },
+    "LANGUAGE": {
+        "TITLE": "Seleccionar idioma",
+        "BUTTON": "Guardar"
     }
 }
